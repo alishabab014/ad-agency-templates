@@ -1,0 +1,1689 @@
+<!-- BLACK HAT ADS - SERVICE PAGE -->
+<section class="bha-service-page">
+
+<style>
+.bha-service-page{
+  --bha-dark:#191A1C;
+  --bha-gold:#CA9B37;
+  --bha-white:#FFFFFF;
+  --bha-purple:#6565FF;
+  --bha-grey:#393939;
+  --bha-text:#A1A1A1;
+
+  font-family:"Roboto",Arial,sans-serif;
+  background:#191A1C;
+  color:#fff;
+  overflow:hidden;
+  line-height:1.6;
+}
+
+.bha-service-page *{
+  box-sizing:border-box;
+}
+
+.bha-container{
+  width:min(1180px,92%);
+  margin:0 auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.bha-hero{
+  position:relative;
+  padding:100px 0 90px;
+  background:
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(101,101,255,.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(202,155,55,.10),
+      transparent 28%
+    ),
+    var(--bha-dark);
+}
+
+.bha-hero:before{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:100%;
+  top:0;
+  left:12%;
+  background:rgba(255,255,255,.04);
+}
+
+.bha-hero:after{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:100%;
+  top:0;
+  right:12%;
+  background:rgba(255,255,255,.04);
+}
+
+.bha-hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:center;
+}
+
+.bha-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 14px;
+  border:1px solid rgba(202,155,55,.35);
+  background:rgba(202,155,55,.06);
+  color:var(--bha-gold);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+.bha-eyebrow i{
+  width:7px;
+  height:7px;
+  background:var(--bha-gold);
+  display:block;
+  border-radius:50%;
+}
+
+.bha-hero h1{
+  font-size:clamp(44px,5.3vw,72px);
+  line-height:1.04;
+  letter-spacing:-2px;
+  margin:0 0 24px;
+  font-weight:800;
+}
+
+.bha-hero h1 span{
+  color:var(--bha-gold);
+}
+
+.bha-hero-text{
+  max-width:650px;
+  color:var(--bha-text);
+  font-size:17px;
+  margin:0 0 32px;
+}
+
+.bha-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.bha-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  min-height:50px;
+  padding:0 23px;
+  font-size:13px;
+  font-weight:700;
+  transition:.25s ease;
+}
+
+.bha-btn-gold{
+  background:var(--bha-gold);
+  color:#191A1C;
+}
+
+.bha-btn-gold:hover{
+  background:#ddb449;
+  color:#191A1C;
+  transform:translateY(-2px);
+}
+
+.bha-btn-dark{
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+}
+
+.bha-btn-dark:hover{
+  border-color:var(--bha-purple);
+  color:#fff;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.bha-visual{
+  position:relative;
+  min-height:440px;
+}
+
+.bha-visual-main{
+  position:absolute;
+  width:370px;
+  height:370px;
+  border-radius:50%;
+  border:1px solid rgba(101,101,255,.35);
+  right:20px;
+  top:25px;
+}
+
+.bha-visual-main:before{
+  content:"";
+  position:absolute;
+  inset:35px;
+  border-radius:50%;
+  border:1px dashed rgba(202,155,55,.42);
+}
+
+.bha-visual-main:after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  top:118px;
+  left:118px;
+  background:linear-gradient(
+    135deg,
+    rgba(101,101,255,.25),
+    rgba(202,155,55,.12)
+  );
+  box-shadow:0 0 60px rgba(101,101,255,.18);
+}
+
+.bha-visual-card{
+  position:absolute;
+  background:#232427;
+  border:1px solid rgba(255,255,255,.09);
+  padding:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.bha-card-one{
+  top:0;
+  left:0;
+  width:190px;
+}
+
+.bha-card-two{
+  bottom:20px;
+  right:0;
+  width:220px;
+}
+
+.bha-card-three{
+  left:15px;
+  bottom:80px;
+  width:190px;
+}
+
+.bha-card-label{
+  color:var(--bha-text);
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.bha-card-number{
+  color:var(--bha-gold);
+  font-size:27px;
+  font-weight:800;
+}
+
+.bha-card-line{
+  margin-top:13px;
+  height:5px;
+  background:#393939;
+  overflow:hidden;
+}
+
+.bha-card-line span{
+  display:block;
+  height:100%;
+  width:75%;
+  background:var(--bha-purple);
+}
+
+
+/* =========================================
+   GOLD STRIP
+========================================= */
+
+.bha-strip{
+  border-top:1px solid rgba(202,155,55,.25);
+  border-bottom:1px solid rgba(202,155,55,.25);
+  background:#202124;
+}
+
+.bha-strip-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.bha-strip-item{
+  padding:21px 15px;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.07);
+}
+
+.bha-strip-item:last-child{
+  border-right:0;
+}
+
+.bha-strip-item strong{
+  display:block;
+  color:var(--bha-gold);
+  font-size:21px;
+  margin-bottom:2px;
+}
+
+.bha-strip-item span{
+  color:#a1a1a1;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.bha-intro{
+  background:#fff;
+  color:var(--bha-dark);
+  padding:100px 0;
+}
+
+.bha-intro-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+  align-items:start;
+}
+
+.bha-section-label{
+  color:var(--bha-gold);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+
+.bha-intro h2{
+  font-size:clamp(34px,4vw,51px);
+  line-height:1.1;
+  margin:0;
+  letter-spacing:-1px;
+}
+
+.bha-intro-content p{
+  color:#656565;
+  font-size:16px;
+  margin:0 0 20px;
+}
+
+
+/* =========================================
+   SERVICE FEATURES
+========================================= */
+
+.bha-features{
+  padding:100px 0;
+  background:#191A1C;
+}
+
+.bha-heading{
+  max-width:750px;
+  margin-bottom:48px;
+}
+
+.bha-heading h2{
+  color:#fff;
+  margin:0 0 14px;
+  font-size:clamp(34px,4vw,51px);
+  line-height:1.1;
+}
+
+.bha-heading p{
+  color:var(--bha-text);
+  margin:0;
+  font-size:16px;
+}
+
+.bha-feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.bha-feature-card{
+  background:#232427;
+  border:1px solid rgba(255,255,255,.07);
+  padding:30px;
+  min-height:235px;
+  position:relative;
+  transition:.3s ease;
+}
+
+.bha-feature-card:before{
+  content:"";
+  width:4px;
+  height:0;
+  position:absolute;
+  left:0;
+  top:0;
+  background:var(--bha-gold);
+  transition:.3s ease;
+}
+
+.bha-feature-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(101,101,255,.35);
+}
+
+.bha-feature-card:hover:before{
+  height:100%;
+}
+
+.bha-feature-number{
+  color:var(--bha-purple);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:35px;
+}
+
+.bha-feature-card h3{
+  color:#fff;
+  font-size:20px;
+  margin:0 0 10px;
+}
+
+.bha-feature-card p{
+  color:var(--bha-text);
+  margin:0;
+  font-size:14px;
+}
+
+
+/* =========================================
+   PLATFORM SECTION
+========================================= */
+
+.bha-platform{
+  padding:100px 0;
+  background:#222325;
+}
+
+.bha-platform-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.bha-platform h2{
+  color:#fff;
+  font-size:clamp(35px,4vw,52px);
+  line-height:1.08;
+  margin:0 0 18px;
+}
+
+.bha-platform p{
+  color:var(--bha-text);
+  font-size:16px;
+  margin:0 0 25px;
+}
+
+.bha-platform-list{
+  display:grid;
+  gap:13px;
+}
+
+.bha-platform-list div{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.bha-check{
+  width:22px;
+  height:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(101,101,255,.12);
+  color:var(--bha-purple);
+  border:1px solid rgba(101,101,255,.28);
+  font-size:11px;
+}
+
+.bha-platform-list span{
+  color:#d0d0d0;
+  font-size:14px;
+}
+
+.bha-platform-box{
+  background:#191A1C;
+  border:1px solid rgba(255,255,255,.08);
+  padding:35px;
+}
+
+.bha-platform-box-title{
+  color:var(--bha-gold);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:25px;
+}
+
+.bha-platform-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.bha-platform-row:last-child{
+  border-bottom:0;
+}
+
+.bha-platform-row span{
+  color:#a1a1a1;
+  font-size:14px;
+}
+
+.bha-status{
+  color:var(--bha-purple)!important;
+  font-weight:700;
+  font-size:11px!important;
+  text-transform:uppercase;
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.bha-process{
+  padding:100px 0;
+  background:#fff;
+  color:var(--bha-dark);
+}
+
+.bha-process .bha-heading h2{
+  color:var(--bha-dark);
+}
+
+.bha-process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #dedede;
+  border-left:1px solid #dedede;
+}
+
+.bha-process-card{
+  padding:30px;
+  border-right:1px solid #dedede;
+  border-bottom:1px solid #dedede;
+}
+
+.bha-process-no{
+  color:var(--bha-gold);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:30px;
+}
+
+.bha-process-card h3{
+  font-size:20px;
+  margin:0 0 9px;
+}
+
+.bha-process-card p{
+  color:#707070;
+  font-size:14px;
+  margin:0;
+}
+
+
+/* =========================================
+   WHY US
+========================================= */
+
+.bha-why{
+  padding:100px 0;
+  background:
+    linear-gradient(
+      120deg,
+      #191A1C 0%,
+      #1f2022 50%,
+      #191A1C 100%
+    );
+}
+
+.bha-why-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+}
+
+.bha-why h2{
+  color:#fff;
+  font-size:clamp(35px,4vw,51px);
+  line-height:1.1;
+  margin:0 0 16px;
+}
+
+.bha-why-intro{
+  color:var(--bha-text);
+  font-size:15px;
+  margin:0;
+}
+
+.bha-why-list{
+  display:grid;
+  gap:10px;
+}
+
+.bha-why-item{
+  padding:22px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.025);
+  display:grid;
+  grid-template-columns:45px 1fr;
+  gap:15px;
+}
+
+.bha-why-icon{
+  width:40px;
+  height:40px;
+  background:rgba(202,155,55,.10);
+  color:var(--bha-gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+}
+
+.bha-why-item h3{
+  color:#fff;
+  margin:0 0 5px;
+  font-size:17px;
+}
+
+.bha-why-item p{
+  color:var(--bha-text);
+  margin:0;
+  font-size:13px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.bha-cta{
+  padding:90px 0;
+  background:#fff;
+}
+
+.bha-cta-box{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(101,101,255,.22),
+      transparent 28%
+    ),
+    #191A1C;
+  border:1px solid rgba(202,155,55,.22);
+  padding:70px 50px;
+  text-align:center;
+}
+
+.bha-cta-box:before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:1px solid rgba(202,155,55,.16);
+  left:-80px;
+  bottom:-80px;
+}
+
+.bha-cta-box h2{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  max-width:750px;
+  margin:0 auto 15px;
+  font-size:clamp(32px,4vw,50px);
+  line-height:1.1;
+}
+
+.bha-cta-box p{
+  position:relative;
+  z-index:2;
+  max-width:620px;
+  margin:0 auto 28px;
+  color:var(--bha-text);
+  font-size:15px;
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.bha-faq{
+  background:#f7f7f7;
+  padding:90px 0;
+}
+
+.bha-faq-heading{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 40px;
+}
+
+.bha-faq-heading h2{
+  color:var(--bha-dark);
+  font-size:clamp(34px,4vw,48px);
+  line-height:1.1;
+  margin:0 0 12px;
+}
+
+.bha-faq-heading p{
+  color:#707070;
+  margin:0;
+  font-size:15px;
+}
+
+.bha-faq-list{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.bha-faq-item{
+  background:#fff;
+  border:1px solid #e4e4e4;
+  margin-bottom:10px;
+}
+
+.bha-faq-item summary{
+  position:relative;
+  cursor:pointer;
+  list-style:none;
+  color:var(--bha-dark);
+  font-weight:700;
+  padding:20px 50px 20px 22px;
+  font-size:14px;
+}
+
+.bha-faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.bha-faq-item summary:after{
+  content:"+";
+  position:absolute;
+  right:20px;
+  top:15px;
+  color:var(--bha-gold);
+  font-size:24px;
+  font-weight:400;
+}
+
+.bha-faq-item[open] summary:after{
+  content:"−";
+}
+
+.bha-faq-answer{
+  padding:0 22px 20px;
+  color:#6c6c6c;
+  font-size:14px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1000px){
+
+  .bha-hero-grid,
+  .bha-platform-grid,
+  .bha-intro-grid,
+  .bha-why-layout{
+    grid-template-columns:1fr;
+  }
+
+  .bha-feature-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .bha-process-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .bha-visual{
+    min-height:400px;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .bha-hero{
+    padding:70px 0;
+  }
+
+  .bha-hero h1{
+    font-size:42px;
+    letter-spacing:-1px;
+  }
+
+  .bha-buttons{
+    flex-direction:column;
+  }
+
+  .bha-btn{
+    width:100%;
+  }
+
+  .bha-strip-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .bha-strip-item{
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+
+  .bha-feature-grid,
+  .bha-process-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bha-visual{
+    min-height:330px;
+  }
+
+  .bha-visual-main{
+    width:280px;
+    height:280px;
+    right:15px;
+  }
+
+  .bha-visual-main:after{
+    width:100px;
+    height:100px;
+    left:90px;
+    top:90px;
+  }
+
+  .bha-card-one{
+    width:145px;
+  }
+
+  .bha-card-two{
+    width:175px;
+  }
+
+  .bha-card-three{
+    width:150px;
+    bottom:40px;
+  }
+
+  .bha-cta-box{
+    padding:50px 25px;
+  }
+
+  .bha-intro,
+  .bha-features,
+  .bha-platform,
+  .bha-process,
+  .bha-why,
+  .bha-cta,
+  .bha-faq{
+    padding:70px 0;
+  }
+
+}
+</style>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<div class="bha-hero">
+
+  <div class="bha-container">
+
+    <div class="bha-hero-grid">
+
+      <div>
+
+        <div class="bha-eyebrow">
+          <i></i>
+          [SERVICE NAME]
+        </div>
+
+        <h1>
+          Advanced
+          <span>[SERVICE]</span>
+          Advertising
+        </h1>
+
+        <p class="bha-hero-text">
+          Build stronger advertising campaigns with strategic targeting,
+          creative planning, campaign management, and performance optimization
+          tailored to your business.
+        </p>
+
+        <div class="bha-buttons">
+
+          <a href="/contact-us/" class="bha-btn bha-btn-gold">
+            Get Started
+          </a>
+
+          <a href="#services" class="bha-btn bha-btn-dark">
+            Explore Service
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="bha-visual">
+
+        <div class="bha-visual-main"></div>
+
+        <div class="bha-visual-card bha-card-one">
+
+          <div class="bha-card-label">
+            Campaign Status
+          </div>
+
+          <div class="bha-card-number">
+            Active
+          </div>
+
+          <div class="bha-card-line">
+            <span></span>
+          </div>
+
+        </div>
+
+
+        <div class="bha-visual-card bha-card-two">
+
+          <div class="bha-card-label">
+            Optimization
+          </div>
+
+          <div class="bha-card-number">
+            24/7
+          </div>
+
+          <div class="bha-card-line">
+            <span style="width:90%;"></span>
+          </div>
+
+        </div>
+
+
+        <div class="bha-visual-card bha-card-three">
+
+          <div class="bha-card-label">
+            Strategy
+          </div>
+
+          <div class="bha-card-number">
+            Data
+          </div>
+
+          <div class="bha-card-line">
+            <span style="width:68%;"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     STRIP
+========================================= -->
+
+<div class="bha-strip">
+
+  <div class="bha-container">
+
+    <div class="bha-strip-grid">
+
+      <div class="bha-strip-item">
+        <strong>01</strong>
+        <span>Strategy</span>
+      </div>
+
+      <div class="bha-strip-item">
+        <strong>02</strong>
+        <span>Targeting</span>
+      </div>
+
+      <div class="bha-strip-item">
+        <strong>03</strong>
+        <span>Optimization</span>
+      </div>
+
+      <div class="bha-strip-item">
+        <strong>04</strong>
+        <span>Reporting</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<div class="bha-intro">
+
+  <div class="bha-container">
+
+    <div class="bha-intro-grid">
+
+      <div>
+
+        <div class="bha-section-label">
+          [SERVICE] Advertising
+        </div>
+
+        <h2>
+          A Smarter Approach To Digital Advertising
+        </h2>
+
+      </div>
+
+      <div class="bha-intro-content">
+
+        <p>
+          Successful advertising requires more than simply launching campaigns.
+          It requires the right strategy, audience research, creative direction,
+          tracking, and continuous optimization.
+        </p>
+
+        <p>
+          Our team builds structured campaigns around your business objectives,
+          helping you reach relevant audiences and make informed decisions from
+          campaign data.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     FEATURES
+========================================= -->
+
+<div class="bha-features" id="services">
+
+  <div class="bha-container">
+
+    <div class="bha-heading">
+
+      <div class="bha-section-label">
+        What We Offer
+      </div>
+
+      <h2>
+        Complete [SERVICE] Advertising Support
+      </h2>
+
+      <p>
+        From campaign planning to ongoing performance management, our service
+        covers the essential stages of your advertising strategy.
+      </p>
+
+    </div>
+
+
+    <div class="bha-feature-grid">
+
+      <div class="bha-feature-card">
+
+        <div class="bha-feature-number">
+          SERVICE / 01
+        </div>
+
+        <h3>
+          Campaign Strategy
+        </h3>
+
+        <p>
+          Develop a clear advertising framework based on your business,
+          audience, offer, budget, and growth objectives.
+        </p>
+
+      </div>
+
+
+      <div class="bha-feature-card">
+
+        <div class="bha-feature-number">
+          SERVICE / 02
+        </div>
+
+        <h3>
+          Audience Targeting
+        </h3>
+
+        <p>
+          Identify relevant customer segments and build campaign structures
+          around your ideal audience.
+        </p>
+
+      </div>
+
+
+      <div class="bha-feature-card">
+
+        <div class="bha-feature-number">
+          SERVICE / 03
+        </div>
+
+        <h3>
+          Creative Planning
+        </h3>
+
+        <p>
+          Develop advertising concepts, messaging, and creative direction
+          aligned with your campaign objectives.
+        </p>
+
+      </div>
+
+
+      <div class="bha-feature-card">
+
+        <div class="bha-feature-number">
+          SERVICE / 04
+        </div>
+
+        <h3>
+          Campaign Management
+        </h3>
+
+        <p>
+          Manage budgets, campaign structures, audiences, placements,
+          tracking, and ongoing advertising activity.
+        </p>
+
+      </div>
+
+
+      <div class="bha-feature-card">
+
+        <div class="bha-feature-number">
+          SERVICE / 05
+        </div>
+
+        <h3>
+          Performance Optimization
+        </h3>
+
+        <p>
+          Analyze campaign data and continuously improve performance through
+          testing, refinement, and optimization.
+        </p>
+
+      </div>
+
+
+      <div class="bha-feature-card">
+
+        <div class="bha-feature-number">
+          SERVICE / 06
+        </div>
+
+        <h3>
+          Reporting & Insights
+        </h3>
+
+        <p>
+          Receive clear reporting and practical insights to understand
+          campaign performance and future opportunities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     PLATFORM / STRATEGY
+========================================= -->
+
+<div class="bha-platform">
+
+  <div class="bha-container">
+
+    <div class="bha-platform-grid">
+
+      <div>
+
+        <div class="bha-section-label">
+          Campaign Framework
+        </div>
+
+        <h2>
+          Built Around Performance And Control
+        </h2>
+
+        <p>
+          Every campaign is planned with a clear structure, measurable goals,
+          and ongoing optimization so your advertising activity remains
+          organized and focused.
+        </p>
+
+
+        <div class="bha-platform-list">
+
+          <div>
+            <div class="bha-check">✓</div>
+            <span>Customized campaign structure</span>
+          </div>
+
+          <div>
+            <div class="bha-check">✓</div>
+            <span>Audience and market research</span>
+          </div>
+
+          <div>
+            <div class="bha-check">✓</div>
+            <span>Creative and messaging strategy</span>
+          </div>
+
+          <div>
+            <div class="bha-check">✓</div>
+            <span>Tracking and performance analysis</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="bha-platform-box">
+
+        <div class="bha-platform-box-title">
+          Campaign Overview
+        </div>
+
+        <div class="bha-platform-row">
+          <span>Business Research</span>
+          <span class="bha-status">Complete</span>
+        </div>
+
+        <div class="bha-platform-row">
+          <span>Audience Strategy</span>
+          <span class="bha-status">Ready</span>
+        </div>
+
+        <div class="bha-platform-row">
+          <span>Creative Direction</span>
+          <span class="bha-status">Ready</span>
+        </div>
+
+        <div class="bha-platform-row">
+          <span>Campaign Structure</span>
+          <span class="bha-status">Ready</span>
+        </div>
+
+        <div class="bha-platform-row">
+          <span>Performance Tracking</span>
+          <span class="bha-status">Active</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     PROCESS
+========================================= -->
+
+<div class="bha-process">
+
+  <div class="bha-container">
+
+    <div class="bha-heading">
+
+      <div class="bha-section-label">
+        Our Process
+      </div>
+
+      <h2>
+        From Planning To Performance
+      </h2>
+
+      <p>
+        A structured process keeps every campaign focused on measurable
+        objectives and continuous improvement.
+      </p>
+
+    </div>
+
+
+    <div class="bha-process-grid">
+
+      <div class="bha-process-card">
+
+        <div class="bha-process-no">
+          STEP 01
+        </div>
+
+        <h3>
+          Research
+        </h3>
+
+        <p>
+          Review your business, industry, audience, competitors, and goals.
+        </p>
+
+      </div>
+
+
+      <div class="bha-process-card">
+
+        <div class="bha-process-no">
+          STEP 02
+        </div>
+
+        <h3>
+          Strategy
+        </h3>
+
+        <p>
+          Create a campaign plan covering targeting, messaging, creative,
+          and objectives.
+        </p>
+
+      </div>
+
+
+      <div class="bha-process-card">
+
+        <div class="bha-process-no">
+          STEP 03
+        </div>
+
+        <h3>
+          Launch
+        </h3>
+
+        <p>
+          Implement the campaign structure, tracking, and advertising assets.
+        </p>
+
+      </div>
+
+
+      <div class="bha-process-card">
+
+        <div class="bha-process-no">
+          STEP 04
+        </div>
+
+        <h3>
+          Optimize
+        </h3>
+
+        <p>
+          Monitor results and continuously improve campaign performance.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     WHY US
+========================================= -->
+
+<div class="bha-why">
+
+  <div class="bha-container">
+
+    <div class="bha-why-layout">
+
+      <div>
+
+        <div class="bha-section-label">
+          Why Black Hat Ads
+        </div>
+
+        <h2>
+          Strategy That Goes Beyond The Ad
+        </h2>
+
+        <p class="bha-why-intro">
+          We combine advertising strategy, audience research, creative
+          direction, and data analysis to create more organized campaigns.
+        </p>
+
+      </div>
+
+
+      <div class="bha-why-list">
+
+        <div class="bha-why-item">
+
+          <div class="bha-why-icon">
+            01
+          </div>
+
+          <div>
+            <h3>
+              Industry Focused Strategy
+            </h3>
+
+            <p>
+              Campaign planning tailored to your business and market.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="bha-why-item">
+
+          <div class="bha-why-icon">
+            02
+          </div>
+
+          <div>
+            <h3>
+              Data Driven Decisions
+            </h3>
+
+            <p>
+              Use campaign data to guide testing, optimization, and scaling.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="bha-why-item">
+
+          <div class="bha-why-icon">
+            03
+          </div>
+
+          <div>
+            <h3>
+              Transparent Reporting
+            </h3>
+
+            <p>
+              Understand your advertising activity through clear performance
+              reporting and insights.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="bha-why-item">
+
+          <div class="bha-why-icon">
+            04
+          </div>
+
+          <div>
+            <h3>
+              Continuous Optimization
+            </h3>
+
+            <p>
+              Campaigns are reviewed regularly to identify new opportunities.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<div class="bha-cta">
+
+  <div class="bha-container">
+
+    <div class="bha-cta-box">
+
+      <h2>
+        Ready To Build A Stronger
+        [SERVICE] Campaign?
+      </h2>
+
+      <p>
+        Talk to our team about your advertising goals and build a strategy
+        designed around your business.
+      </p>
+
+      <a href="/contact-us/" class="bha-btn bha-btn-gold">
+        Talk To Our Team
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     FAQ
+========================================= -->
+
+<div class="bha-faq">
+
+  <div class="bha-container">
+
+    <div class="bha-faq-heading">
+
+      <div class="bha-section-label">
+        FAQ
+      </div>
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+      <p>
+        Common questions about our [SERVICE] advertising services.
+      </p>
+
+    </div>
+
+
+    <div class="bha-faq-list">
+
+      <details class="bha-faq-item">
+
+        <summary>
+          What does your [SERVICE] advertising service include?
+        </summary>
+
+        <div class="bha-faq-answer">
+          Our service can include campaign strategy, audience research,
+          creative planning, campaign management, optimization, tracking,
+          and performance reporting.
+        </div>
+
+      </details>
+
+
+      <details class="bha-faq-item">
+
+        <summary>
+          Can you manage an existing advertising campaign?
+        </summary>
+
+        <div class="bha-faq-answer">
+          Yes. We can review an existing campaign structure, identify
+          opportunities for improvement, and manage ongoing campaign activity.
+        </div>
+
+      </details>
+
+
+      <details class="bha-faq-item">
+
+        <summary>
+          How do you improve campaign performance?
+        </summary>
+
+        <div class="bha-faq-answer">
+          We review campaign data, audience performance, creative results,
+          conversion activity, and other relevant metrics to identify
+          optimization opportunities.
+        </div>
+
+      </details>
+
+
+      <details class="bha-faq-item">
+
+        <summary>
+          Can your advertising strategy be customized?
+        </summary>
+
+        <div class="bha-faq-answer">
+          Yes. Campaign strategy, targeting, messaging, creative direction,
+          and reporting can be customized according to your business goals.
+        </div>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<nav class="demo-gallery-nav" aria-label="Template gallery navigation">
+<style>
+.demo-gallery-nav{background:#0b0d12;color:#fff;padding:34px 20px 28px;font-family:Arial,Helvetica,sans-serif;border-top:3px solid #2a2f3a}
+.demo-gallery-nav *{box-sizing:border-box}
+.demo-gallery-nav .dgn-inner{max-width:1180px;margin:0 auto}
+.demo-gallery-nav h4{margin:0 0 18px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#8b95a8;font-weight:700}
+.demo-gallery-nav .dgn-groups{display:flex;flex-wrap:wrap;gap:30px}
+.demo-gallery-nav .dgn-group{min-width:150px}
+.demo-gallery-nav .dgn-group strong{display:block;font-size:12px;color:#ffb14e;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px}
+.demo-gallery-nav .dgn-group a{display:block;color:#d7dbea;font-size:13px;text-decoration:none;margin:7px 0;opacity:.82}
+.demo-gallery-nav .dgn-group a:hover{opacity:1;text-decoration:underline}
+.demo-gallery-nav .dgn-group a.current{color:#fff;font-weight:700;opacity:1}
+@media(max-width:600px){.demo-gallery-nav .dgn-groups{gap:22px}}
+</style>
+<div class="dgn-inner">
+<h4>Template Gallery</h4>
+<div class="dgn-groups">
+<div class="dgn-group">
+<strong>Ads Approved</strong>
+<a href="ads-approved-home.html">Home</a>
+<a href="ads-approved-services.html">Services</a>
+<a href="ads-approved-about.html">About Us</a>
+<a href="ads-approved-contact.html">Contact Us</a>
+</div>
+<div class="dgn-group">
+<strong>Black Hat Ads</strong>
+<a href="blackhat-ads.html" class="current">Service Page</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Ad Agency</strong>
+<a href="boost-ad-agency-services.html">Service Pages</a>
+<a href="boost-ad-agency-restricted-niche.html">Restricted Niche</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Agency Ltd</strong>
+<a href="boost-agency-ltd.html">Landing Page</a>
+</div>
+<div class="dgn-group">
+<strong>Cloaker Agency</strong>
+<a href="cloaker-agency.html">Home</a>
+</div>
+<div class="dgn-group">
+<strong>CryptoAds</strong>
+<a href="cryptoads.html">Home</a>
+</div>
+</div>
+</div>
+</nav>
+

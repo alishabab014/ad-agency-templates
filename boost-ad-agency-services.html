@@ -1,0 +1,3408 @@
+<!-- =========================================================
+     BOOST AD AGENCY
+     PREMIUM SERVICE PAGE TEMPLATE
+========================================================= -->
+
+<section class="boost-service-page">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.boost-service-page{
+  --b-primary:#0093AB;
+  --b-secondary:#FFD124;
+  --b-text:#6E6E6E;
+  --b-dark:#2D2D2D;
+  --b-white:#FFFFFF;
+  --b-border:#DADADA;
+  --b-deep:#006778;
+  --b-light:#F3F3F3;
+  --b-soft-white:#FFFFFFD4;
+  --b-bright:#00AFC1;
+
+  font-family:"Roboto",Arial,sans-serif;
+  color:var(--b-dark);
+  background:#fff;
+  line-height:1.6;
+  overflow:hidden;
+}
+
+.boost-service-page *{
+  box-sizing:border-box;
+}
+
+.boost-container{
+  width:min(1180px,92%);
+  margin:0 auto;
+}
+
+.boost-service-page a{
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes boostFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+@keyframes boostPulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(0,175,193,.25);
+  }
+  70%{
+    box-shadow:0 0 0 18px rgba(0,175,193,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(0,175,193,0);
+  }
+}
+
+@keyframes boostShine{
+  0%{
+    transform:translateX(-120%);
+  }
+  100%{
+    transform:translateX(120%);
+  }
+}
+
+@keyframes boostScroll{
+  0%{
+    transform:translateY(0);
+    opacity:.4;
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    transform:translateY(10px);
+    opacity:.4;
+  }
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.boost-reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.boost-reveal.boost-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.boost-btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:54px;
+  padding:0 27px;
+  font-size:14px;
+  font-weight:700;
+  border-radius:6px;
+  overflow:hidden;
+  transition:.3s ease;
+}
+
+.boost-btn span{
+  position:relative;
+  z-index:2;
+}
+
+.boost-btn-primary{
+  background:var(--b-secondary);
+  color:var(--b-dark);
+}
+
+.boost-btn-primary:before{
+  content:"";
+  position:absolute;
+  width:35%;
+  height:160%;
+  left:-55%;
+  top:-30%;
+  background:rgba(255,255,255,.28);
+  transform:skewX(-25deg);
+  transition:.6s ease;
+}
+
+.boost-btn-primary:hover:before{
+  left:120%;
+}
+
+.boost-btn-primary:hover{
+  color:var(--b-dark);
+  transform:translateY(-3px);
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.boost-btn-outline{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.25);
+  background:transparent;
+}
+
+.boost-btn-outline:hover{
+  border-color:var(--b-bright);
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+.boost-btn-dark{
+  background:var(--b-dark);
+  color:#fff;
+}
+
+.boost-btn-dark:hover{
+  color:#fff;
+  background:var(--b-deep);
+  transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.boost-service-hero{
+  position:relative;
+  background:
+    radial-gradient(
+      circle at 82% 25%,
+      rgba(0,175,193,.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 8% 80%,
+      rgba(255,209,36,.09),
+      transparent 25%
+    ),
+    var(--b-dark);
+  padding:95px 0 85px;
+  overflow:hidden;
+}
+
+.boost-service-hero:before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:50%;
+  right:-180px;
+  top:-170px;
+}
+
+.boost-service-hero:after{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:1px solid rgba(255,255,255,.04);
+  border-radius:50%;
+  left:-190px;
+  bottom:-180px;
+}
+
+.boost-hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:70px;
+  align-items:center;
+}
+
+.boost-hero-copy{
+  max-width:680px;
+}
+
+.boost-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--b-secondary);
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  margin-bottom:20px;
+}
+
+.boost-eyebrow i{
+  width:8px;
+  height:8px;
+  display:block;
+  border-radius:50%;
+  background:var(--b-secondary);
+  animation:boostPulse 2.2s infinite;
+}
+
+.boost-hero-copy h1{
+  color:#fff;
+  font-size:clamp(43px,5vw,70px);
+  line-height:1.03;
+  letter-spacing:-2px;
+  margin:0 0 23px;
+  font-weight:800;
+}
+
+.boost-hero-copy h1 em{
+  color:var(--b-bright);
+  font-style:normal;
+}
+
+.boost-hero-copy p{
+  color:var(--b-soft-white);
+  font-size:18px;
+  max-width:650px;
+  margin:0 0 31px;
+}
+
+.boost-hero-buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.boost-hero-visual{
+  min-height:470px;
+  position:relative;
+}
+
+.boost-visual-orbit{
+  position:absolute;
+  width:400px;
+  height:400px;
+  right:25px;
+  top:20px;
+  border:1px solid rgba(0,175,193,.28);
+  border-radius:50%;
+}
+
+.boost-visual-orbit:before{
+  content:"";
+  position:absolute;
+  inset:35px;
+  border-radius:50%;
+  border:1px dashed rgba(255,209,36,.3);
+}
+
+.boost-visual-core{
+  position:absolute;
+  width:145px;
+  height:145px;
+  right:152px;
+  top:147px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,175,193,.35),
+      rgba(0,147,171,.03)
+    );
+  border:1px solid rgba(0,175,193,.42);
+  box-shadow:
+    0 0 80px rgba(0,175,193,.18);
+  animation:boostFloat 5s ease-in-out infinite;
+}
+
+.boost-visual-core:after{
+  content:"";
+  position:absolute;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--b-secondary);
+  left:49px;
+  top:49px;
+  box-shadow:0 0 35px rgba(255,209,36,.25);
+}
+
+.boost-floating-card{
+  position:absolute;
+  background:#38393b;
+  border:1px solid rgba(255,255,255,.09);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.boost-floating-card small{
+  display:block;
+  color:#9fa4a6;
+  text-transform:uppercase;
+  font-size:9px;
+  letter-spacing:1px;
+  margin-bottom:7px;
+}
+
+.boost-floating-card strong{
+  display:block;
+  color:#fff;
+  font-size:18px;
+}
+
+.boost-floating-card b{
+  display:block;
+  color:var(--b-secondary);
+  font-size:26px;
+  line-height:1;
+  margin-top:12px;
+}
+
+.boost-card-1{
+  top:0;
+  left:0;
+  width:190px;
+  animation:boostFloat 5s ease-in-out infinite;
+}
+
+.boost-card-2{
+  right:0;
+  bottom:28px;
+  width:210px;
+  animation:boostFloat 5s ease-in-out 1.5s infinite;
+}
+
+.boost-card-3{
+  left:10px;
+  bottom:55px;
+  width:175px;
+  animation:boostFloat 5s ease-in-out .7s infinite;
+}
+
+.boost-mini-bar{
+  margin-top:13px;
+  height:4px;
+  background:#4a4c4d;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.boost-mini-bar span{
+  display:block;
+  height:100%;
+  background:var(--b-bright);
+  width:80%;
+}
+
+
+/* =========================================================
+   TRUST BAR
+========================================================= */
+
+.boost-trust{
+  background:var(--b-primary);
+}
+
+.boost-trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.boost-trust-item{
+  padding:24px 15px;
+  text-align:center;
+  color:#fff;
+  border-right:1px solid rgba(255,255,255,.15);
+}
+
+.boost-trust-item:last-child{
+  border-right:0;
+}
+
+.boost-trust-item strong{
+  display:block;
+  font-size:23px;
+  color:var(--b-secondary);
+  margin-bottom:3px;
+}
+
+.boost-trust-item span{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.boost-overview{
+  padding:105px 0;
+  background:#fff;
+}
+
+.boost-overview-grid{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:80px;
+  align-items:start;
+}
+
+.boost-section-tag{
+  color:var(--b-primary);
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  margin-bottom:11px;
+}
+
+.boost-overview h2{
+  color:var(--b-dark);
+  font-size:clamp(35px,4vw,52px);
+  line-height:1.1;
+  margin:0;
+  letter-spacing:-1px;
+}
+
+.boost-overview-content p{
+  color:var(--b-text);
+  font-size:17px;
+  margin:0 0 18px;
+}
+
+.boost-overview-highlight{
+  margin-top:25px;
+  padding:20px 22px;
+  border-left:4px solid var(--b-secondary);
+  background:var(--b-light);
+  color:var(--b-dark);
+  font-weight:600;
+  font-size:14px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.boost-service-section{
+  padding:105px 0;
+  background:var(--b-light);
+}
+
+.boost-heading{
+  max-width:770px;
+  margin-bottom:48px;
+}
+
+.boost-heading h2{
+  color:var(--b-dark);
+  font-size:clamp(35px,4vw,51px);
+  line-height:1.08;
+  margin:0 0 14px;
+  letter-spacing:-1px;
+}
+
+.boost-heading p{
+  color:var(--b-text);
+  font-size:16px;
+  margin:0;
+}
+
+.boost-service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.boost-service-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #e1e6e7;
+  padding:30px;
+  min-height:245px;
+  overflow:hidden;
+  transition:.35s ease;
+}
+
+.boost-service-card:before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:4px;
+  left:0;
+  bottom:0;
+  background:linear-gradient(
+    90deg,
+    var(--b-primary),
+    var(--b-bright)
+  );
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.35s ease;
+}
+
+.boost-service-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(0,147,171,.3);
+  box-shadow:0 22px 45px rgba(45,45,45,.08);
+}
+
+.boost-service-card:hover:before{
+  transform:scaleX(1);
+}
+
+.boost-card-number{
+  color:var(--b-primary);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:34px;
+}
+
+.boost-service-card h3{
+  color:var(--b-dark);
+  font-size:21px;
+  margin:0 0 10px;
+}
+
+.boost-service-card p{
+  color:var(--b-text);
+  font-size:14px;
+  margin:0;
+}
+
+.boost-service-arrow{
+  position:absolute;
+  right:25px;
+  bottom:20px;
+  font-size:20px;
+  color:var(--b-primary);
+}
+
+
+/* =========================================================
+   FEATURE / SPLIT SECTION
+========================================================= */
+
+.boost-feature{
+  padding:105px 0;
+  background:var(--b-dark);
+}
+
+.boost-feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.boost-feature h2{
+  color:#fff;
+  font-size:clamp(35px,4vw,52px);
+  line-height:1.08;
+  margin:0 0 17px;
+}
+
+.boost-feature-text{
+  color:var(--b-soft-white);
+  font-size:16px;
+  margin:0 0 30px;
+}
+
+.boost-feature-list{
+  display:grid;
+  gap:14px;
+}
+
+.boost-feature-list-item{
+  display:flex;
+  gap:13px;
+  align-items:flex-start;
+}
+
+.boost-feature-check{
+  flex:0 0 25px;
+  height:25px;
+  border-radius:50%;
+  background:var(--b-primary);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.boost-feature-list-item span{
+  color:#d2d4d4;
+  font-size:14px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.boost-dashboard{
+  background:#38393b;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+
+.boost-dashboard-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.boost-dashboard-top strong{
+  color:#fff;
+  font-size:15px;
+}
+
+.boost-live{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:var(--b-secondary);
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:800;
+}
+
+.boost-live i{
+  width:7px;
+  height:7px;
+  background:var(--b-secondary);
+  border-radius:50%;
+  animation:boostPulse 2s infinite;
+}
+
+.boost-chart{
+  height:230px;
+  display:flex;
+  align-items:end;
+  gap:10px;
+  padding:20px 8px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.boost-chart-bar{
+  flex:1;
+  min-height:25px;
+  background:linear-gradient(
+    to top,
+    var(--b-primary),
+    var(--b-bright)
+  );
+  border-radius:5px 5px 0 0;
+  transition:.4s ease;
+}
+
+.boost-chart-bar:hover{
+  filter:brightness(1.15);
+}
+
+.boost-dashboard-metrics{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:18px;
+}
+
+.boost-dashboard-metric{
+  background:rgba(255,255,255,.04);
+  padding:14px;
+  border-radius:7px;
+}
+
+.boost-dashboard-metric small{
+  display:block;
+  color:#858585;
+  font-size:9px;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+.boost-dashboard-metric strong{
+  color:var(--b-secondary);
+  font-size:20px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.boost-process{
+  padding:105px 0;
+  background:#fff;
+}
+
+.boost-process-list{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.boost-process-list:before{
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  top:38px;
+  height:1px;
+  background:#dce2e4;
+}
+
+.boost-process-step{
+  position:relative;
+  padding:0 18px;
+  text-align:center;
+}
+
+.boost-process-circle{
+  position:relative;
+  z-index:2;
+  width:76px;
+  height:76px;
+  margin:0 auto 25px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid var(--b-primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--b-primary);
+  font-size:13px;
+  font-weight:800;
+  transition:.3s ease;
+}
+
+.boost-process-step:hover .boost-process-circle{
+  background:var(--b-primary);
+  color:#fff;
+  transform:scale(1.08);
+}
+
+.boost-process-step h3{
+  color:var(--b-dark);
+  font-size:19px;
+  margin:0 0 8px;
+}
+
+.boost-process-step p{
+  color:var(--b-text);
+  font-size:13px;
+  margin:0 auto;
+  max-width:210px;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.boost-benefits{
+  padding:105px 0;
+  background:var(--b-light);
+}
+
+.boost-benefit-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+  align-items:start;
+}
+
+.boost-benefit-layout h2{
+  font-size:clamp(35px,4vw,51px);
+  line-height:1.08;
+  margin:0;
+}
+
+.boost-benefit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.boost-benefit{
+  background:#fff;
+  padding:25px;
+  border:1px solid #e0e6e8;
+  transition:.3s ease;
+}
+
+.boost-benefit:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(45,45,45,.06);
+}
+
+.boost-benefit-icon{
+  width:40px;
+  height:40px;
+  border-radius:8px;
+  background:rgba(0,147,171,.10);
+  color:var(--b-primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.boost-benefit h3{
+  font-size:18px;
+  margin:0 0 7px;
+}
+
+.boost-benefit p{
+  color:var(--b-text);
+  font-size:13px;
+  margin:0;
+}
+
+
+/* =========================================================
+   TESTIMONIAL SLIDER
+========================================================= */
+
+.boost-testimonials{
+  padding:110px 0;
+  background:var(--b-dark);
+  position:relative;
+}
+
+.boost-testimonial-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 50px;
+}
+
+.boost-testimonial-heading .boost-section-tag{
+  color:var(--b-secondary);
+}
+
+.boost-testimonial-heading h2{
+  color:#fff;
+  font-size:clamp(35px,4vw,52px);
+  line-height:1.08;
+  margin:0 0 13px;
+}
+
+.boost-testimonial-heading p{
+  color:var(--b-soft-white);
+  margin:0;
+  font-size:15px;
+}
+
+.boost-testimonial-slider{
+  position:relative;
+}
+
+.boost-slider-viewport{
+  overflow:hidden;
+}
+
+.boost-slider-track{
+  display:flex;
+  transition:transform .65s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+
+.boost-testimonial-card{
+  flex:0 0 calc(33.333333% - 14px);
+  margin-right:21px;
+  background:#36383a;
+  border:1px solid rgba(255,255,255,.08);
+  padding:31px;
+  min-height:330px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  border-radius:8px;
+}
+
+.boost-testimonial-card:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:50px;
+  height:3px;
+  background:var(--b-secondary);
+}
+
+.boost-stars{
+  color:var(--b-secondary);
+  font-size:14px;
+  letter-spacing:3px;
+  margin-bottom:21px;
+}
+
+.boost-testimonial-card p{
+  color:#c4c7c8;
+  font-size:14px;
+  line-height:1.8;
+  margin:0 0 25px;
+}
+
+.boost-client{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:auto;
+}
+
+.boost-avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--b-primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+}
+
+.boost-client strong{
+  display:block;
+  color:#fff;
+  font-size:14px;
+}
+
+.boost-client span{
+  display:block;
+  color:#8b9092;
+  font-size:11px;
+}
+
+.boost-slider-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#191A1C;
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--b-secondary);
+  cursor:pointer;
+  z-index:3;
+  transition:.25s ease;
+  font-size:18px;
+}
+
+.boost-slider-arrow:hover{
+  background:var(--b-secondary);
+  color:var(--b-dark);
+  border-color:var(--b-secondary);
+}
+
+.boost-prev{
+  left:-25px;
+}
+
+.boost-next{
+  right:-25px;
+}
+
+.boost-slider-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:30px;
+}
+
+.boost-slider-dot{
+  width:8px;
+  height:8px;
+  background:#55585a;
+  border:0;
+  border-radius:50%;
+  padding:0;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.boost-slider-dot.active{
+  width:25px;
+  border-radius:10px;
+  background:var(--b-secondary);
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.boost-faq{
+  padding:105px 0;
+  background:#fff;
+}
+
+.boost-faq-heading{
+  max-width:720px;
+  margin:0 auto 45px;
+  text-align:center;
+}
+
+.boost-faq-heading h2{
+  color:var(--b-dark);
+  font-size:clamp(35px,4vw,51px);
+  line-height:1.08;
+  margin:0 0 12px;
+}
+
+.boost-faq-heading p{
+  color:var(--b-text);
+  font-size:15px;
+  margin:0;
+}
+
+.boost-faq-list{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.boost-faq-item{
+  border:1px solid #e0e5e7;
+  margin-bottom:10px;
+  border-radius:7px;
+  overflow:hidden;
+}
+
+.boost-faq-item summary{
+  position:relative;
+  cursor:pointer;
+  padding:21px 55px 21px 23px;
+  color:var(--b-dark);
+  font-weight:700;
+  font-size:14px;
+  list-style:none;
+}
+
+.boost-faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.boost-faq-item summary:after{
+  content:"+";
+  position:absolute;
+  right:22px;
+  top:15px;
+  color:var(--b-primary);
+  font-size:25px;
+  font-weight:400;
+}
+
+.boost-faq-item[open] summary:after{
+  content:"−";
+}
+
+.boost-faq-answer{
+  padding:0 23px 22px;
+  color:var(--b-text);
+  font-size:14px;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.boost-contact{
+  padding:105px 0;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(0,175,193,.16),
+      transparent 28%
+    ),
+    var(--b-dark);
+}
+
+.boost-contact-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:70px;
+  align-items:start;
+}
+
+.boost-contact-copy .boost-section-tag{
+  color:var(--b-secondary);
+}
+
+.boost-contact-copy h2{
+  color:#fff;
+  font-size:clamp(36px,4vw,54px);
+  line-height:1.08;
+  margin:0 0 17px;
+}
+
+.boost-contact-copy p{
+  color:var(--b-soft-white);
+  font-size:16px;
+  margin:0 0 28px;
+}
+
+.boost-contact-points{
+  display:grid;
+  gap:13px;
+}
+
+.boost-contact-point{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.boost-contact-point-icon{
+  width:28px;
+  height:28px;
+  background:var(--b-primary);
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  flex-shrink:0;
+}
+
+.boost-contact-point span{
+  color:#d5d7d8;
+  font-size:14px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.boost-form-box{
+  background:#fff;
+  padding:35px;
+  border-radius:10px;
+  box-shadow:0 25px 65px rgba(0,0,0,.18);
+}
+
+.boost-form-box h3{
+  color:var(--b-dark);
+  font-size:25px;
+  margin:0 0 6px;
+}
+
+.boost-form-box > p{
+  color:var(--b-text);
+  font-size:13px;
+  margin:0 0 25px;
+}
+
+.boost-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.boost-form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.boost-form-full{
+  grid-column:1 / -1;
+}
+
+.boost-form-group label{
+  color:var(--b-dark);
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.boost-form-group input,
+.boost-form-group select,
+.boost-form-group textarea{
+  width:100%;
+  border:1px solid #dce2e4;
+  background:#fafbfb;
+  color:var(--b-dark);
+  border-radius:5px;
+  padding:13px 14px;
+  font-family:inherit;
+  font-size:13px;
+  outline:none;
+  transition:.25s ease;
+}
+
+.boost-form-group input:focus,
+.boost-form-group select:focus,
+.boost-form-group textarea:focus{
+  border-color:var(--b-primary);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(0,147,171,.08);
+}
+
+.boost-form-group textarea{
+  min-height:125px;
+  resize:vertical;
+}
+
+.boost-form-submit{
+  margin-top:18px;
+}
+
+.boost-form-submit button{
+  width:100%;
+  min-height:52px;
+  border:0;
+  border-radius:6px;
+  background:var(--b-primary);
+  color:#fff;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.boost-form-submit button:hover{
+  background:var(--b-deep);
+  transform:translateY(-2px);
+  box-shadow:0 12px 25px rgba(0,103,120,.20);
+}
+
+.boost-form-note{
+  text-align:center;
+  color:#919699;
+  font-size:10px;
+  margin-top:13px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.boost-final-cta{
+  padding:0;
+  background:#fff;
+}
+
+.boost-final-box{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(
+    135deg,
+    var(--b-primary),
+    var(--b-deep)
+  );
+  padding:65px 40px;
+  text-align:center;
+  margin:0 auto;
+}
+
+.boost-final-box:before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  right:-100px;
+  top:-130px;
+  background:rgba(255,255,255,.08);
+}
+
+.boost-final-box:after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  left:-90px;
+  bottom:-120px;
+  background:rgba(255,255,255,.06);
+}
+
+.boost-final-box > *{
+  position:relative;
+  z-index:2;
+}
+
+.boost-final-box h2{
+  color:#fff;
+  font-size:clamp(34px,4vw,51px);
+  line-height:1.08;
+  margin:0 0 14px;
+}
+
+.boost-final-box p{
+  color:rgba(255,255,255,.8);
+  max-width:650px;
+  margin:0 auto 26px;
+  font-size:15px;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.boost-scroll-indicator{
+  position:absolute;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  z-index:4;
+  color:rgba(255,255,255,.45);
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.boost-scroll-indicator div{
+  width:1px;
+  height:24px;
+  background:rgba(255,255,255,.35);
+  margin:7px auto 0;
+  animation:boostScroll 1.8s infinite;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+  .boost-hero-grid,
+  .boost-overview-grid,
+  .boost-feature-grid,
+  .boost-benefit-layout,
+  .boost-contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .boost-service-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .boost-process-list{
+    grid-template-columns:repeat(2,1fr);
+    row-gap:45px;
+  }
+
+  .boost-process-list:before{
+    display:none;
+  }
+
+  .boost-testimonial-card{
+    flex:0 0 calc(50% - 10px);
+  }
+
+  .boost-hero-visual{
+    max-width:650px;
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .boost-service-hero{
+    padding:70px 0 75px;
+  }
+
+  .boost-hero-copy h1{
+    font-size:43px;
+    letter-spacing:-1px;
+  }
+
+  .boost-hero-buttons{
+    flex-direction:column;
+  }
+
+  .boost-btn{
+    width:100%;
+  }
+
+  .boost-hero-visual{
+    min-height:350px;
+  }
+
+  .boost-visual-orbit{
+    width:285px;
+    height:285px;
+    right:5px;
+    top:35px;
+  }
+
+  .boost-visual-core{
+    width:100px;
+    height:100px;
+    right:100px;
+    top:127px;
+  }
+
+  .boost-visual-core:after{
+    width:32px;
+    height:32px;
+    left:33px;
+    top:33px;
+  }
+
+  .boost-floating-card{
+    padding:15px;
+  }
+
+  .boost-card-1{
+    width:145px;
+  }
+
+  .boost-card-2{
+    width:170px;
+  }
+
+  .boost-card-3{
+    width:145px;
+  }
+
+  .boost-trust-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .boost-trust-item{
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .boost-service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .boost-process-list{
+    grid-template-columns:1fr;
+  }
+
+  .boost-benefit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .boost-dashboard-metrics{
+    grid-template-columns:1fr;
+  }
+
+  .boost-testimonial-card{
+    flex:0 0 100%;
+    margin-right:0;
+  }
+
+  .boost-slider-arrow{
+    width:40px;
+    height:40px;
+  }
+
+  .boost-prev{
+    left:8px;
+  }
+
+  .boost-next{
+    right:8px;
+  }
+
+  .boost-form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .boost-form-full{
+    grid-column:auto;
+  }
+
+  .boost-form-box{
+    padding:25px;
+  }
+
+  .boost-overview,
+  .boost-service-section,
+  .boost-feature,
+  .boost-process,
+  .boost-benefits,
+  .boost-testimonials,
+  .boost-faq,
+  .boost-contact{
+    padding:75px 0;
+  }
+
+  .boost-final-box{
+    padding:50px 23px;
+  }
+
+  .boost-scroll-indicator{
+    display:none;
+  }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<div class="boost-service-hero">
+
+  <div class="boost-container">
+
+    <div class="boost-hero-grid">
+
+      <div class="boost-hero-copy boost-reveal">
+
+        <div class="boost-eyebrow">
+          <i></i>
+          [SERVICE NAME] SERVICES
+        </div>
+
+        <h1>
+          Turn Your
+          <em>[SERVICE]</em>
+          Campaign Into Growth
+        </h1>
+
+        <p>
+          Build smarter advertising campaigns with strategic targeting,
+          compelling creative, performance tracking, and ongoing optimization
+          designed around your business goals.
+        </p>
+
+        <div class="boost-hero-buttons">
+
+          <a
+            href="#contact"
+            class="boost-btn boost-btn-primary"
+          >
+            <span>Start Your Campaign</span>
+          </a>
+
+          <a
+            href="#services"
+            class="boost-btn boost-btn-outline"
+          >
+            <span>Explore Services</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="boost-hero-visual boost-reveal">
+
+        <div class="boost-visual-orbit"></div>
+
+        <div class="boost-visual-core"></div>
+
+
+        <div class="boost-floating-card boost-card-1">
+
+          <small>Campaign Strategy</small>
+
+          <strong>Data Driven</strong>
+
+          <div class="boost-mini-bar">
+            <span style="width:82%;"></span>
+          </div>
+
+        </div>
+
+
+        <div class="boost-floating-card boost-card-2">
+
+          <small>Optimization</small>
+
+          <b>24/7</b>
+
+          <div class="boost-mini-bar">
+            <span style="width:90%;"></span>
+          </div>
+
+        </div>
+
+
+        <div class="boost-floating-card boost-card-3">
+
+          <small>Targeting</small>
+
+          <strong>Precision</strong>
+
+          <div class="boost-mini-bar">
+            <span style="width:76%;"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="boost-scroll-indicator">
+    Scroll
+    <div></div>
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     TRUST BAR
+========================================================= -->
+
+<div class="boost-trust">
+
+  <div class="boost-container">
+
+    <div class="boost-trust-grid">
+
+      <div class="boost-trust-item">
+        <strong>01</strong>
+        <span>Strategy First</span>
+      </div>
+
+      <div class="boost-trust-item">
+        <strong>02</strong>
+        <span>Audience Focused</span>
+      </div>
+
+      <div class="boost-trust-item">
+        <strong>03</strong>
+        <span>Performance Led</span>
+      </div>
+
+      <div class="boost-trust-item">
+        <strong>04</strong>
+        <span>Ongoing Optimization</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     OVERVIEW
+========================================================= -->
+
+<section class="boost-overview">
+
+  <div class="boost-container">
+
+    <div class="boost-overview-grid">
+
+      <div class="boost-reveal">
+
+        <div class="boost-section-tag">
+          [SERVICE NAME] Advertising
+        </div>
+
+        <h2>
+          A Better Way To Approach Digital Advertising
+        </h2>
+
+      </div>
+
+
+      <div class="boost-overview-content boost-reveal">
+
+        <p>
+          Successful advertising is not simply about putting an ad in front
+          of more people. It starts with understanding your audience,
+          positioning your offer, and building a campaign around measurable
+          business goals.
+        </p>
+
+        <p>
+          Our team combines strategic planning, audience research, creative
+          direction, campaign management, and performance analysis to create
+          a more structured advertising experience.
+        </p>
+
+        <div class="boost-overview-highlight">
+          Every campaign is planned around your business, audience,
+          objectives, and opportunities for growth.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="boost-service-section" id="services">
+
+  <div class="boost-container">
+
+    <div class="boost-heading boost-reveal">
+
+      <div class="boost-section-tag">
+        What We Do
+      </div>
+
+      <h2>
+        Complete [SERVICE] Advertising Support
+      </h2>
+
+      <p>
+        From the first strategy session to ongoing optimization, we support
+        the key stages of your advertising campaign.
+      </p>
+
+    </div>
+
+
+    <div class="boost-service-grid">
+
+
+      <div class="boost-service-card boost-reveal">
+
+        <div class="boost-card-number">
+          SERVICE / 01
+        </div>
+
+        <h3>
+          Advertising Strategy
+        </h3>
+
+        <p>
+          Develop a clear campaign strategy based on your market,
+          audience, offer, budget, and business objectives.
+        </p>
+
+        <div class="boost-service-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="boost-service-card boost-reveal">
+
+        <div class="boost-card-number">
+          SERVICE / 02
+        </div>
+
+        <h3>
+          Audience Targeting
+        </h3>
+
+        <p>
+          Identify relevant audiences and create focused targeting
+          strategies around your ideal customers.
+        </p>
+
+        <div class="boost-service-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="boost-service-card boost-reveal">
+
+        <div class="boost-card-number">
+          SERVICE / 03
+        </div>
+
+        <h3>
+          Creative Development
+        </h3>
+
+        <p>
+          Develop ad concepts, messaging, and creative direction designed
+          to communicate your offer clearly.
+        </p>
+
+        <div class="boost-service-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="boost-service-card boost-reveal">
+
+        <div class="boost-card-number">
+          SERVICE / 04
+        </div>
+
+        <h3>
+          Campaign Management
+        </h3>
+
+        <p>
+          Manage campaign structure, budgets, audiences, placements,
+          tracking, and ongoing advertising activity.
+        </p>
+
+        <div class="boost-service-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="boost-service-card boost-reveal">
+
+        <div class="boost-card-number">
+          SERVICE / 05
+        </div>
+
+        <h3>
+          Performance Optimization
+        </h3>
+
+        <p>
+          Analyze campaign data, test opportunities, and continuously
+          improve performance.
+        </p>
+
+        <div class="boost-service-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="boost-service-card boost-reveal">
+
+        <div class="boost-card-number">
+          SERVICE / 06
+        </div>
+
+        <h3>
+          Reporting & Insights
+        </h3>
+
+        <p>
+          Get clear campaign reporting that helps you understand
+          performance and plan future improvements.
+        </p>
+
+        <div class="boost-service-arrow">
+          →
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURE
+========================================================= -->
+
+<section class="boost-feature">
+
+  <div class="boost-container">
+
+    <div class="boost-feature-grid">
+
+      <div class="boost-reveal">
+
+        <div class="boost-section-tag" style="color:#FFD124;">
+          Our Approach
+        </div>
+
+        <h2>
+          Built Around Performance, Not Guesswork
+        </h2>
+
+        <p class="boost-feature-text">
+          We use campaign data, audience insights, creative testing,
+          and ongoing analysis to guide advertising decisions.
+        </p>
+
+
+        <div class="boost-feature-list">
+
+          <div class="boost-feature-list-item">
+
+            <div class="boost-feature-check">
+              ✓
+            </div>
+
+            <span>
+              Campaign strategy tailored to your business objectives
+            </span>
+
+          </div>
+
+
+          <div class="boost-feature-list-item">
+
+            <div class="boost-feature-check">
+              ✓
+            </div>
+
+            <span>
+              Audience research and structured targeting
+            </span>
+
+          </div>
+
+
+          <div class="boost-feature-list-item">
+
+            <div class="boost-feature-check">
+              ✓
+            </div>
+
+            <span>
+              Continuous campaign monitoring and optimization
+            </span>
+
+          </div>
+
+
+          <div class="boost-feature-list-item">
+
+            <div class="boost-feature-check">
+              ✓
+            </div>
+
+            <span>
+              Clear reporting and actionable campaign insights
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="boost-dashboard boost-reveal">
+
+        <div class="boost-dashboard-top">
+
+          <strong>
+            Campaign Overview
+          </strong>
+
+          <div class="boost-live">
+            <i></i>
+            Live Monitoring
+          </div>
+
+        </div>
+
+
+        <div class="boost-chart">
+
+          <div class="boost-chart-bar" style="height:32%;"></div>
+
+          <div class="boost-chart-bar" style="height:45%;"></div>
+
+          <div class="boost-chart-bar" style="height:40%;"></div>
+
+          <div class="boost-chart-bar" style="height:57%;"></div>
+
+          <div class="boost-chart-bar" style="height:50%;"></div>
+
+          <div class="boost-chart-bar" style="height:68%;"></div>
+
+          <div class="boost-chart-bar" style="height:73%;"></div>
+
+          <div class="boost-chart-bar" style="height:81%;"></div>
+
+          <div class="boost-chart-bar" style="height:93%;"></div>
+
+        </div>
+
+
+        <div class="boost-dashboard-metrics">
+
+          <div class="boost-dashboard-metric">
+
+            <small>
+              Strategy
+            </small>
+
+            <strong>
+              Focused
+            </strong>
+
+          </div>
+
+
+          <div class="boost-dashboard-metric">
+
+            <small>
+              Targeting
+            </small>
+
+            <strong>
+              Refined
+            </strong>
+
+          </div>
+
+
+          <div class="boost-dashboard-metric">
+
+            <small>
+              Tracking
+            </small>
+
+            <strong>
+              Active
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="boost-process">
+
+  <div class="boost-container">
+
+    <div class="boost-heading boost-reveal">
+
+      <div class="boost-section-tag">
+        How It Works
+      </div>
+
+      <h2>
+        A Clear Process From Strategy To Scale
+      </h2>
+
+      <p>
+        Every campaign follows a structured process designed to keep
+        strategy, execution, and optimization aligned.
+      </p>
+
+    </div>
+
+
+    <div class="boost-process-list">
+
+
+      <div class="boost-process-step boost-reveal">
+
+        <div class="boost-process-circle">
+          01
+        </div>
+
+        <h3>
+          Research
+        </h3>
+
+        <p>
+          Understand your business, market, audience, competition,
+          and advertising goals.
+        </p>
+
+      </div>
+
+
+      <div class="boost-process-step boost-reveal">
+
+        <div class="boost-process-circle">
+          02
+        </div>
+
+        <h3>
+          Strategy
+        </h3>
+
+        <p>
+          Build the targeting, messaging, campaign structure,
+          and creative direction.
+        </p>
+
+      </div>
+
+
+      <div class="boost-process-step boost-reveal">
+
+        <div class="boost-process-circle">
+          03
+        </div>
+
+        <h3>
+          Launch
+        </h3>
+
+        <p>
+          Implement the campaign with structured tracking and
+          measurable objectives.
+        </p>
+
+      </div>
+
+
+      <div class="boost-process-step boost-reveal">
+
+        <div class="boost-process-circle">
+          04
+        </div>
+
+        <h3>
+          Optimize
+        </h3>
+
+        <p>
+          Review performance and continuously improve campaigns
+          through testing and refinement.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BENEFITS
+========================================================= -->
+
+<section class="boost-benefits">
+
+  <div class="boost-container">
+
+    <div class="boost-benefit-layout">
+
+      <div class="boost-reveal">
+
+        <div class="boost-section-tag">
+          Why Work With Us
+        </div>
+
+        <h2>
+          Advertising Designed Around Your Growth Goals
+        </h2>
+
+      </div>
+
+
+      <div class="boost-benefit-grid">
+
+
+        <div class="boost-benefit boost-reveal">
+
+          <div class="boost-benefit-icon">
+            01
+          </div>
+
+          <h3>
+            Custom Strategy
+          </h3>
+
+          <p>
+            Build campaigns around your business model,
+            audience, and objectives.
+          </p>
+
+        </div>
+
+
+        <div class="boost-benefit boost-reveal">
+
+          <div class="boost-benefit-icon">
+            02
+          </div>
+
+          <h3>
+            Better Targeting
+          </h3>
+
+          <p>
+            Focus advertising efforts on relevant audience
+            segments and opportunities.
+          </p>
+
+        </div>
+
+
+        <div class="boost-benefit boost-reveal">
+
+          <div class="boost-benefit-icon">
+            03
+          </div>
+
+          <h3>
+            Creative Thinking
+          </h3>
+
+          <p>
+            Develop messaging and creative concepts aligned
+            with your campaign goals.
+          </p>
+
+        </div>
+
+
+        <div class="boost-benefit boost-reveal">
+
+          <div class="boost-benefit-icon">
+            04
+          </div>
+
+          <h3>
+            Ongoing Optimization
+          </h3>
+
+          <p>
+            Monitor performance and identify opportunities
+            for continuous improvement.
+          </p>
+
+        </div>
+
+
+        <div class="boost-benefit boost-reveal">
+
+          <div class="boost-benefit-icon">
+            05
+          </div>
+
+          <h3>
+            Clear Reporting
+          </h3>
+
+          <p>
+            Understand campaign activity through practical,
+            easy-to-read reporting.
+          </p>
+
+        </div>
+
+
+        <div class="boost-benefit boost-reveal">
+
+          <div class="boost-benefit-icon">
+            06
+          </div>
+
+          <h3>
+            Scalable Campaigns
+          </h3>
+
+          <p>
+            Identify winning strategies and build a foundation
+            for long-term advertising growth.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+
+<section class="boost-testimonials">
+
+  <div class="boost-container">
+
+    <div class="boost-testimonial-heading boost-reveal">
+
+      <div class="boost-section-tag">
+        Client Testimonials
+      </div>
+
+      <h2>
+        What Clients Say About Working With Us
+      </h2>
+
+      <p>
+        Placeholder testimonials are included below. Replace these with
+        verified client reviews before publishing.
+      </p>
+
+    </div>
+
+
+    <div class="boost-testimonial-slider boost-reveal">
+
+      <button
+        class="boost-slider-arrow boost-prev"
+        type="button"
+        aria-label="Previous testimonial"
+      >
+        ←
+      </button>
+
+
+      <div class="boost-slider-viewport">
+
+        <div class="boost-slider-track">
+
+
+          <!-- TESTIMONIAL 1 -->
+
+          <article class="boost-testimonial-card">
+
+            <div class="boost-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “The team brought a much clearer structure to our advertising
+              strategy. Communication was straightforward and the campaign
+              process became much easier to manage.”
+            </p>
+
+            <div class="boost-client">
+
+              <div class="boost-avatar">
+                JD
+              </div>
+
+              <div>
+                <strong>
+                  James Davis
+                </strong>
+
+                <span>
+                  E-commerce Client
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- TESTIMONIAL 2 -->
+
+          <article class="boost-testimonial-card">
+
+            <div class="boost-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “What stood out was the level of detail. From audience research
+              to campaign optimization, everything was handled with a clear
+              strategy.”
+            </p>
+
+            <div class="boost-client">
+
+              <div class="boost-avatar">
+                SM
+              </div>
+
+              <div>
+                <strong>
+                  Sarah Mitchell
+                </strong>
+
+                <span>
+                  Online Brand
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- TESTIMONIAL 3 -->
+
+          <article class="boost-testimonial-card">
+
+            <div class="boost-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “We needed a more focused approach to paid advertising.
+              The team helped us organize our campaigns and understand
+              what we should be testing next.”
+            </p>
+
+            <div class="boost-client">
+
+              <div class="boost-avatar">
+                MK
+              </div>
+
+              <div>
+                <strong>
+                  Michael King
+                </strong>
+
+                <span>
+                  Digital Business
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- TESTIMONIAL 4 -->
+
+          <article class="boost-testimonial-card">
+
+            <div class="boost-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Professional, responsive, and focused on the details that
+              actually matter. We always had a clear understanding of
+              what was happening with our campaigns.”
+            </p>
+
+            <div class="boost-client">
+
+              <div class="boost-avatar">
+                AL
+              </div>
+
+              <div>
+                <strong>
+                  Alex Lewis
+                </strong>
+
+                <span>
+                  Marketing Client
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="boost-slider-arrow boost-next"
+        type="button"
+        aria-label="Next testimonial"
+      >
+        →
+      </button>
+
+    </div>
+
+
+    <div class="boost-slider-dots">
+
+      <button class="boost-slider-dot active" type="button"></button>
+
+      <button class="boost-slider-dot" type="button"></button>
+
+      <button class="boost-slider-dot" type="button"></button>
+
+      <button class="boost-slider-dot" type="button"></button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="boost-faq">
+
+  <div class="boost-container">
+
+    <div class="boost-faq-heading boost-reveal">
+
+      <div class="boost-section-tag">
+        FAQ
+      </div>
+
+      <h2>
+        Questions About Our [SERVICE] Services?
+      </h2>
+
+      <p>
+        Answers to common questions businesses have before starting
+        an advertising campaign.
+      </p>
+
+    </div>
+
+
+    <div class="boost-faq-list">
+
+
+      <details class="boost-faq-item boost-reveal">
+
+        <summary>
+          What does your [SERVICE] advertising service include?
+        </summary>
+
+        <div class="boost-faq-answer">
+          Our service can include campaign strategy, audience research,
+          creative planning, campaign management, optimization, tracking,
+          and reporting.
+        </div>
+
+      </details>
+
+
+      <details class="boost-faq-item boost-reveal">
+
+        <summary>
+          Can you manage an existing campaign?
+        </summary>
+
+        <div class="boost-faq-answer">
+          Yes. We can review your current campaign setup, identify
+          improvement opportunities, and provide ongoing campaign management.
+        </div>
+
+      </details>
+
+
+      <details class="boost-faq-item boost-reveal">
+
+        <summary>
+          How do you measure campaign performance?
+        </summary>
+
+        <div class="boost-faq-answer">
+          We use relevant campaign metrics such as conversions, cost per
+          result, engagement, revenue, and return on advertising spend.
+        </div>
+
+      </details>
+
+
+      <details class="boost-faq-item boost-reveal">
+
+        <summary>
+          Can campaigns be customized to my business?
+        </summary>
+
+        <div class="boost-faq-answer">
+          Yes. Strategy, targeting, creative direction, campaign structure,
+          and reporting can all be adapted around your business goals.
+        </div>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="boost-contact" id="contact">
+
+  <div class="boost-container">
+
+    <div class="boost-contact-grid">
+
+
+      <div class="boost-contact-copy boost-reveal">
+
+        <div class="boost-section-tag">
+          Start Your Campaign
+        </div>
+
+        <h2>
+          Let's Build A Smarter Advertising Strategy
+        </h2>
+
+        <p>
+          Tell us about your business, current advertising activity,
+          and growth goals. Our team can then review your requirements
+          and discuss the right approach.
+        </p>
+
+
+        <div class="boost-contact-points">
+
+
+          <div class="boost-contact-point">
+
+            <div class="boost-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Strategy tailored to your business objectives
+            </span>
+
+          </div>
+
+
+          <div class="boost-contact-point">
+
+            <div class="boost-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Audience and campaign planning
+            </span>
+
+          </div>
+
+
+          <div class="boost-contact-point">
+
+            <div class="boost-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Ongoing campaign optimization
+            </span>
+
+          </div>
+
+
+          <div class="boost-contact-point">
+
+            <div class="boost-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Clear communication and reporting
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <div class="boost-form-box boost-reveal">
+
+        <h3>
+          Request A Consultation
+        </h3>
+
+        <p>
+          Complete the form and our team will review your requirements.
+        </p>
+
+
+        <form
+          id="boostServiceForm"
+          class="boost-form"
+          action="#"
+          method="post"
+        >
+
+          <div class="boost-form-grid">
+
+
+            <div class="boost-form-group">
+
+              <label for="boost-name">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="boost-name"
+                name="name"
+                placeholder="Your name"
+                required
+              >
+
+            </div>
+
+
+            <div class="boost-form-group">
+
+              <label for="boost-email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="boost-email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="boost-form-group">
+
+              <label for="boost-phone">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                id="boost-phone"
+                name="phone"
+                placeholder="+1 000 000 0000"
+              >
+
+            </div>
+
+
+            <div class="boost-form-group">
+
+              <label for="boost-service">
+                Service
+              </label>
+
+              <select
+                id="boost-service"
+                name="service"
+                required
+              >
+
+                <option value="">
+                  Select a service
+                </option>
+
+                <option>
+                  Facebook Ads
+                </option>
+
+                <option>
+                  Google Ads
+                </option>
+
+                <option>
+                  TikTok Ads
+                </option>
+
+                <option>
+                  Instagram Ads
+                </option>
+
+                <option>
+                  Snapchat Ads
+                </option>
+
+                <option>
+                  Pinterest Ads
+                </option>
+
+                <option>
+                  YouTube Ads
+                </option>
+
+                <option>
+                  E-commerce Advertising
+                </option>
+
+                <option>
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="boost-form-group boost-form-full">
+
+              <label for="boost-budget">
+                Monthly Advertising Budget
+              </label>
+
+              <select
+                id="boost-budget"
+                name="budget"
+              >
+
+                <option value="">
+                  Select budget range
+                </option>
+
+                <option>
+                  Under $1,000
+                </option>
+
+                <option>
+                  $1,000 - $5,000
+                </option>
+
+                <option>
+                  $5,000 - $10,000
+                </option>
+
+                <option>
+                  $10,000 - $25,000
+                </option>
+
+                <option>
+                  $25,000+
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="boost-form-group boost-form-full">
+
+              <label for="boost-message">
+                Tell Us About Your Goals
+              </label>
+
+              <textarea
+                id="boost-message"
+                name="message"
+                placeholder="Tell us about your business, current campaigns, and goals..."
+                required
+              ></textarea>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="boost-form-submit">
+
+            <button type="submit">
+              Send Consultation Request
+            </button>
+
+          </div>
+
+
+          <div class="boost-form-note">
+            By submitting this form, you agree to be contacted regarding
+            your advertising requirements.
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="boost-final-cta">
+
+  <div class="boost-container">
+
+    <div class="boost-final-box boost-reveal">
+
+      <h2>
+        Ready To Take Your Advertising Further?
+      </h2>
+
+      <p>
+        Build a focused strategy, reach the right audience, and create
+        campaigns designed around your business goals.
+      </p>
+
+      <a
+        href="#contact"
+        class="boost-btn boost-btn-primary"
+      >
+        <span>Talk To Our Team</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const revealElements =
+    document.querySelectorAll(".boost-reveal");
+
+  if("IntersectionObserver" in window){
+
+    const revealObserver =
+      new IntersectionObserver(
+        function(entries, observer){
+
+          entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+              entry.target.classList.add(
+                "boost-visible"
+              );
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold:.12
+        }
+      );
+
+    revealElements.forEach(function(element){
+
+      revealObserver.observe(element);
+
+    });
+
+  }else{
+
+    revealElements.forEach(function(element){
+
+      element.classList.add(
+        "boost-visible"
+      );
+
+    });
+
+  }
+
+
+  /* =======================================================
+     TESTIMONIAL SLIDER
+  ======================================================= */
+
+  const track =
+    document.querySelector(".boost-slider-track");
+
+  const cards =
+    document.querySelectorAll(
+      ".boost-testimonial-card"
+    );
+
+  const nextBtn =
+    document.querySelector(".boost-next");
+
+  const prevBtn =
+    document.querySelector(".boost-prev");
+
+  const dots =
+    document.querySelectorAll(
+      ".boost-slider-dot"
+    );
+
+  const slider =
+    document.querySelector(
+      ".boost-testimonial-slider"
+    );
+
+  if(!track || !cards.length) return;
+
+
+  let currentIndex = 0;
+
+  let autoplay;
+
+
+  function visibleCards(){
+
+    if(window.innerWidth <= 650){
+      return 1;
+    }
+
+    if(window.innerWidth <= 1000){
+      return 2;
+    }
+
+    return 3;
+
+  }
+
+
+  function maxIndex(){
+
+    return Math.max(
+      0,
+      cards.length - visibleCards()
+    );
+
+  }
+
+
+  function updateSlider(){
+
+    const cardWidth =
+      cards[0].getBoundingClientRect().width;
+
+    const gap =
+      window.innerWidth > 650
+      ? 21
+      : 0;
+
+    const move =
+      (cardWidth + gap) *
+      currentIndex;
+
+    track.style.transform =
+      "translateX(-" + move + "px)";
+
+
+    dots.forEach(function(dot,index){
+
+      dot.classList.toggle(
+        "active",
+        index === currentIndex
+      );
+
+    });
+
+  }
+
+
+  function nextSlide(){
+
+    const maximum =
+      maxIndex();
+
+    if(currentIndex >= maximum){
+
+      currentIndex = 0;
+
+    }else{
+
+      currentIndex++;
+
+    }
+
+    updateSlider();
+
+  }
+
+
+  function previousSlide(){
+
+    const maximum =
+      maxIndex();
+
+    if(currentIndex <= 0){
+
+      currentIndex = maximum;
+
+    }else{
+
+      currentIndex--;
+
+    }
+
+    updateSlider();
+
+  }
+
+
+  function startAutoplay(){
+
+    clearInterval(autoplay);
+
+    autoplay =
+      setInterval(
+        nextSlide,
+        4500
+      );
+
+  }
+
+
+  function stopAutoplay(){
+
+    clearInterval(autoplay);
+
+  }
+
+
+  nextBtn.addEventListener(
+    "click",
+    function(){
+
+      nextSlide();
+
+      startAutoplay();
+
+    }
+  );
+
+
+  prevBtn.addEventListener(
+    "click",
+    function(){
+
+      previousSlide();
+
+      startAutoplay();
+
+    }
+  );
+
+
+  dots.forEach(function(dot,index){
+
+    dot.addEventListener(
+      "click",
+      function(){
+
+        currentIndex =
+          Math.min(
+            index,
+            maxIndex()
+          );
+
+        updateSlider();
+
+        startAutoplay();
+
+      }
+    );
+
+  });
+
+
+  slider.addEventListener(
+    "mouseenter",
+    stopAutoplay
+  );
+
+
+  slider.addEventListener(
+    "mouseleave",
+    startAutoplay
+  );
+
+
+  window.addEventListener(
+    "resize",
+    function(){
+
+      currentIndex =
+        Math.min(
+          currentIndex,
+          maxIndex()
+        );
+
+      updateSlider();
+
+    }
+  );
+
+
+  updateSlider();
+
+  startAutoplay();
+
+
+  /* =======================================================
+     FORM DEMO
+     Replace with Elementor form / backend endpoint
+  ======================================================= */
+
+  const form =
+    document.getElementById(
+      "boostServiceForm"
+    );
+
+  if(form){
+
+    form.addEventListener(
+      "submit",
+      function(event){
+
+        event.preventDefault();
+
+        const button =
+          form.querySelector(
+            "button[type='submit']"
+          );
+
+        const originalText =
+          button.textContent;
+
+        button.textContent =
+          "Request Received";
+
+        button.style.background =
+          "#006778";
+
+        setTimeout(function(){
+
+          button.textContent =
+            originalText;
+
+          button.style.background =
+            "";
+
+        },3000);
+
+      }
+    );
+
+  }
+
+});
+
+</script>
+
+</section>
+
+
+<nav class="demo-gallery-nav" aria-label="Template gallery navigation">
+<style>
+.demo-gallery-nav{background:#0b0d12;color:#fff;padding:34px 20px 28px;font-family:Arial,Helvetica,sans-serif;border-top:3px solid #2a2f3a}
+.demo-gallery-nav *{box-sizing:border-box}
+.demo-gallery-nav .dgn-inner{max-width:1180px;margin:0 auto}
+.demo-gallery-nav h4{margin:0 0 18px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#8b95a8;font-weight:700}
+.demo-gallery-nav .dgn-groups{display:flex;flex-wrap:wrap;gap:30px}
+.demo-gallery-nav .dgn-group{min-width:150px}
+.demo-gallery-nav .dgn-group strong{display:block;font-size:12px;color:#ffb14e;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px}
+.demo-gallery-nav .dgn-group a{display:block;color:#d7dbea;font-size:13px;text-decoration:none;margin:7px 0;opacity:.82}
+.demo-gallery-nav .dgn-group a:hover{opacity:1;text-decoration:underline}
+.demo-gallery-nav .dgn-group a.current{color:#fff;font-weight:700;opacity:1}
+@media(max-width:600px){.demo-gallery-nav .dgn-groups{gap:22px}}
+</style>
+<div class="dgn-inner">
+<h4>Template Gallery</h4>
+<div class="dgn-groups">
+<div class="dgn-group">
+<strong>Ads Approved</strong>
+<a href="ads-approved-home.html">Home</a>
+<a href="ads-approved-services.html">Services</a>
+<a href="ads-approved-about.html">About Us</a>
+<a href="ads-approved-contact.html">Contact Us</a>
+</div>
+<div class="dgn-group">
+<strong>Black Hat Ads</strong>
+<a href="blackhat-ads.html">Service Page</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Ad Agency</strong>
+<a href="boost-ad-agency-services.html" class="current">Service Pages</a>
+<a href="boost-ad-agency-restricted-niche.html">Restricted Niche</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Agency Ltd</strong>
+<a href="boost-agency-ltd.html">Landing Page</a>
+</div>
+<div class="dgn-group">
+<strong>Cloaker Agency</strong>
+<a href="cloaker-agency.html">Home</a>
+</div>
+<div class="dgn-group">
+<strong>CryptoAds</strong>
+<a href="cryptoads.html">Home</a>
+</div>
+</div>
+</div>
+</nav>
+

@@ -1,0 +1,464 @@
+<title>Stop Paying For Clicks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Work+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600;700&amp;display=swap">
+
+<style>
+  :root{
+    --white:#FFFFFF;
+    --grey-050:#F4F7F7;
+    --grey-150:#E1E9E9;
+    --grey-300:#BFCDCE;
+    --grey-500:#6F8688;
+    --ink:#10161A;
+    --teal:#006778;
+    --teal-700:#00505E;
+    --teal-900:#003C46;
+    --teal-100:#DDEEF0;
+    --gold:#FFD124;
+    --gold-dim:#A9860A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{margin:0;font-family:'Sora',sans-serif;text-wrap:balance;}
+  p{margin:0;}
+  a{color:inherit;}
+  button{font:inherit;cursor:pointer;}
+  .container{max-width:1160px;margin:0 auto;padding:0 32px;}
+  [hidden]{display:none!important;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  section{padding:88px 0;}
+
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+  .kicker.gold{color:var(--gold);}
+  .kicker.teal{color:var(--teal);}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 30px;font-weight:700;font-size:14.5px;border:none;text-decoration:none;cursor:pointer;font-family:'Work Sans',sans-serif;}
+  .btn-gold{background:var(--gold);color:var(--ink);}
+  .btn-ink{background:var(--ink);color:var(--white);}
+  .btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:var(--white);}
+
+  /* ---------------- HERO ---------------- */
+  .hero{background:var(--teal);color:var(--white);padding:72px 0 0;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,209,36,.14),transparent 70%);}
+  .hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start;padding-bottom:64px;}
+  .hero h1{font-size:50px;line-height:1.05;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-top:18px;}
+  .hero h1 span{color:var(--gold);}
+  .hero__dek{margin-top:20px;font-size:17px;line-height:1.6;color:#CFE9EC;max-width:44ch;}
+  .badges{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .badge{display:flex;flex-direction:column;align-items:center;justify-content:center;width:84px;height:84px;border-radius:50%;
+    border:2px solid var(--gold);position:relative;text-align:center;flex:none;}
+  .badge::before{content:"";position:absolute;inset:5px;border:1px dashed rgba(255,209,36,.6);border-radius:50%;}
+  .badge b{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--gold);line-height:1;}
+  .badge span{font-size:8.5px;color:var(--white);text-transform:uppercase;letter-spacing:.04em;margin-top:3px;line-height:1.25;max-width:60px;}
+
+  .lead-card{background:var(--white);color:var(--ink);padding:28px;box-shadow:0 30px 60px rgba(0,20,24,.35);}
+  .lead-card__bar{height:5px;background:var(--gold);margin:-28px -28px 22px;}
+  .lead-card h2{font-size:21px;font-weight:700;}
+  .lead-card p.sub{margin-top:8px;font-size:13px;color:var(--grey-500);}
+  .field{margin-top:16px;}
+  .field label{display:block;font-size:11px;font-weight:600;color:var(--grey-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+  .field input,.field select{width:100%;border:1.5px solid var(--grey-150);background:var(--grey-050);padding:11px 12px;font-size:14px;font-family:'Work Sans',sans-serif;}
+  .field input:focus,.field select:focus{border-color:var(--teal);background:var(--white);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .lead-card button{width:100%;margin-top:20px;}
+  .lead-card__note{margin-top:12px;font-size:11px;color:var(--grey-500);text-align:center;}
+  .form-success{text-align:center;padding:20px 0;}
+  .form-success h3{font-size:19px;}
+  .form-success p{margin-top:8px;font-size:13.5px;color:var(--grey-500);}
+
+  /* ---------------- STAT BAR ---------------- */
+  .statbar{border-top:1px solid var(--grey-150);border-bottom:1px solid var(--grey-150);}
+  .statbar__row{display:grid;grid-template-columns:repeat(4,1fr);}
+  .statbar__cell{padding:26px 22px;border-left:1px solid var(--grey-150);}
+  .statbar__cell:first-child{border-left:none;}
+  .statbar__num{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:26px;color:var(--teal);}
+  .statbar__label{font-size:12px;color:var(--grey-500);margin-top:4px;}
+
+  /* ---------------- VALUE STACK ---------------- */
+  .stack{list-style:none;margin:0;padding:0;border-top:1px solid var(--grey-150);}
+  .stack li{display:grid;grid-template-columns:32px 1fr auto;gap:18px;align-items:start;padding:20px 0;border-bottom:1px solid var(--grey-150);}
+  .stack__check{width:28px;height:28px;border-radius:50%;background:var(--teal-100);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+  .stack b{font-size:15.5px;}
+  .stack span.d{display:block;font-size:13px;color:var(--grey-500);margin-top:4px;line-height:1.5;}
+  .stack__tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold-dim);white-space:nowrap;align-self:center;}
+
+  .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-150);border:1px solid var(--grey-150);margin-top:36px;}
+  .tier{background:var(--white);padding:24px 22px;}
+  .tier--mid{background:var(--teal);color:var(--white);}
+  .tier__name{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);}
+  .tier--mid .tier__name{color:var(--gold);}
+  .tier__spend{font-size:19px;font-weight:700;margin-top:8px;font-family:'Sora',sans-serif;}
+  .tier ul{list-style:none;margin:14px 0 0;padding:0;font-size:12.5px;display:flex;flex-direction:column;gap:6px;}
+  .tier--mid ul{color:#D6EEF0;}
+
+  /* ---------------- RESULTS ---------------- */
+  .results{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .result{border:1px solid var(--grey-150);padding:26px;}
+  .result__cat{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;}
+  .result h3{font-size:18px;margin-top:8px;}
+  .result__stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+  .result__stats div b{display:block;font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--gold-dim);}
+  .result__stats div span{font-size:10.5px;color:var(--grey-500);text-transform:uppercase;letter-spacing:.03em;}
+  .result p.desc{margin-top:16px;font-size:13px;color:var(--grey-500);line-height:1.55;border-top:1px solid var(--grey-150);padding-top:14px;}
+
+  /* ---------------- SERVICES ---------------- */
+  .platforms{background:var(--teal-900);color:var(--white);}
+  .plist{list-style:none;margin:0;padding:0;}
+  .plist li{display:grid;grid-template-columns:60px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-top:1px solid rgba(255,255,255,.14);}
+  .plist li:last-child{border-bottom:1px solid rgba(255,255,255,.14);}
+  .plist__num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:14px;}
+  .plist h3{font-size:26px;color:var(--white);text-transform:uppercase;}
+  .plist p{font-size:13.5px;color:#A9C7CA;max-width:38ch;}
+  .plist__meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7FA3A6;white-space:nowrap;align-self:start;padding-top:8px;}
+
+  /* ---------------- PROCESS ---------------- */
+  .stages{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .stage__num{font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:700;color:var(--teal-100);}
+  .stage h3{font-size:16px;margin-top:6px;}
+  .stage p{font-size:13px;color:var(--grey-500);margin-top:8px;line-height:1.55;}
+
+  /* ---------------- WHY ---------------- */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grey-150);border:1px solid var(--grey-150);}
+  .why{background:var(--white);padding:24px 22px;}
+  .why__mark{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold-dim);}
+  .why h3{font-size:15.5px;font-weight:700;margin-top:8px;font-family:'Work Sans',sans-serif;}
+  .why p{font-size:13px;color:var(--grey-500);margin-top:6px;line-height:1.5;}
+
+  /* ---------------- FAQ ---------------- */
+  details{border-top:1px solid var(--grey-150);padding:20px 0;}
+  details:last-of-type{border-bottom:1px solid var(--grey-150);}
+  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:22px;color:var(--teal);font-weight:400;transition:transform .15s;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{margin-top:12px;font-size:14px;color:var(--grey-500);line-height:1.6;max-width:68ch;}
+
+  /* ---------------- FINAL CTA ---------------- */
+  .final{background:var(--teal-900);color:var(--white);}
+  .final__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .final h2{font-size:34px;text-transform:uppercase;line-height:1.08;color:var(--white);}
+  .final p{margin-top:14px;font-size:15px;color:#B9D8DA;max-width:42ch;line-height:1.6;}
+  .final .btn-ink{margin-top:26px;background:var(--white);color:var(--ink);}
+  .final-form{background:var(--ink);padding:26px;border:1px solid #24393D;}
+  .final-form label{color:#9FB2B4;}
+  .final-form input,.final-form select{background:#1B2427;border:1.5px solid #2B383B;color:var(--white);}
+  .final-form input:focus,.final-form select:focus{border-color:var(--gold);}
+  .final-form select option{color:var(--ink);}
+
+  .section-head{max-width:600px;margin-bottom:40px;}
+  .section-head h2{font-size:30px;margin-top:12px;}
+  .section-head p{margin-top:12px;font-size:15px;color:var(--grey-500);line-height:1.6;}
+  .section-head.on-dark p{color:#A9C7CA;}
+  .section-head.on-dark h2{color:var(--white);}
+
+  @media (max-width:860px){
+    .container{padding:0 20px;}
+    .hero__grid,.final__grid,.field-row{grid-template-columns:1fr;}
+    .statbar__row,.results,.stages,.why-grid,.tier-row{grid-template-columns:1fr 1fr;}
+    .results,.tier-row{grid-template-columns:1fr;}
+    .plist li{grid-template-columns:1fr;gap:6px;}
+    .plist__meta{padding-top:0;}
+    section{padding:56px 0;}
+    .hero h1{font-size:34px;}
+  }
+</style>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <span class="kicker gold">Google Ads Management</span>
+        <h1>Stop paying for clicks that <span>don't convert.</span></h1>
+        <p class="hero__dek">We rebuild, test and manage Google Ads accounts for businesses tired of watching budget disappear into traffic that never buys. Search, Shopping, Display, YouTube and Performance Max — run by people who check the account daily.</p>
+        <div class="badges">
+          <div class="badge"><b>12+</b><span>Years Running Ads</span></div>
+          <div class="badge"><b>120+</b><span>Clients Scaled</span></div>
+          <div class="badge"><b>№1</b><span>Best Google Ads Agency</span></div>
+        </div>
+      </div>
+      <form class="lead-card" id="heroForm" onsubmit="return false;">
+        <div class="lead-card__bar"></div>
+        <div class="form-default">
+          <h2>Get a free account audit.</h2>
+          <p class="sub">No pitch — a real look at where your budget is leaking, sent back to you directly.</p>
+          <div class="field"><label for="h-name">Full name</label><input id="h-name" required></div>
+          <div class="field-row">
+            <div class="field"><label for="h-email">Email</label><input id="h-email" type="email" required></div>
+            <div class="field"><label for="h-phone">Phone</label><input id="h-phone" type="tel" required></div>
+          </div>
+          <div class="field"><label for="h-url">Website / Ads account URL</label><input id="h-url" required></div>
+          <button type="submit" class="btn btn-gold">Get My Free Audit →</button>
+          <p class="lead-card__note">Takes 2 minutes. No account access required.</p>
+        </div>
+        <div class="form-success" hidden>
+          <h3>Request received.</h3>
+          <p>A strategist will review what's public on your account and follow up within one business day.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STAT BAR ============ -->
+<div class="statbar">
+  <div class="container">
+    <div class="statbar__row">
+      <div class="statbar__cell"><div class="statbar__num">120+</div><div class="statbar__label">Accounts Managed</div></div>
+      <div class="statbar__cell"><div class="statbar__num">4.9/5</div><div class="statbar__label">Client Rating</div></div>
+      <div class="statbar__cell"><div class="statbar__num">$1M+</div><div class="statbar__label">Monthly Spend Capability</div></div>
+      <div class="statbar__cell"><div class="statbar__num">12+</div><div class="statbar__label">Years In The Account</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker teal">No Hidden Line Items</span>
+      <h2>Exactly what you get. Nothing vague.</h2>
+      <p>Every retainer includes the same core deliverables — the difference between tiers is how often we touch the account, not what's on the invoice.</p>
+    </div>
+    <ul class="stack">
+      <li><span class="stack__check">✓</span><div><b>Full account audit</b><span class="d">Structure, Quality Score and wasted spend reviewed before anything is rebuilt.</span></div><span class="stack__tag">WEEK 1</span></li>
+      <li><span class="stack__check">✓</span><div><b>Conversion tracking, verified</b><span class="d">GA4 and Google Ads conversion actions checked and fixed if they're lying to you.</span></div><span class="stack__tag">WEEK 1</span></li>
+      <li><span class="stack__check">✓</span><div><b>Ad copy &amp; creative testing</b><span class="d">New headlines, descriptions and assets written and tested every month.</span></div><span class="stack__tag">ONGOING</span></li>
+      <li><span class="stack__check">✓</span><div><b>Keyword &amp; negative keyword management</b><span class="d">Search terms mined weekly so you stop paying for clicks that were never going to convert.</span></div><span class="stack__tag">WEEKLY</span></li>
+      <li><span class="stack__check">✓</span><div><b>Plain-English reporting</b><span class="d">Spend, CPA and ROAS against target — sent every Monday, no jargon required to read it.</span></div><span class="stack__tag">WEEKLY</span></li>
+      <li><span class="stack__check">✓</span><div><b>Direct line to your strategist</b><span class="d">A standing monthly call with the person actually managing your account, not a rep.</span></div><span class="stack__tag">MONTHLY</span></li>
+    </ul>
+    <div class="tier-row">
+      <div class="tier"><span class="tier__name">Starter</span><div class="tier__spend">Up to $5K/mo spend</div>
+        <ul><li>Single campaign type</li><li>Monthly reporting</li><li>Email support</li></ul></div>
+      <div class="tier tier--mid"><span class="tier__name">Growth</span><div class="tier__spend">$5K – $50K/mo spend</div>
+        <ul><li>Multi-campaign management</li><li>Weekly reporting + strategy call</li><li>Dedicated strategist</li></ul></div>
+      <div class="tier"><span class="tier__name">Scale</span><div class="tier__spend">$50K+/mo spend</div>
+        <ul><li>Full-funnel strategy</li><li>Twice-weekly optimization</li><li>Priority senior support</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker teal">Receipts, Not Promises</span>
+      <h2>What the last rebuild actually did.</h2>
+      <p>Illustrative results from accounts run through this process.</p>
+    </div>
+    <div class="results">
+      <div class="result">
+        <span class="result__cat">E-commerce</span>
+        <h3>Home goods retailer</h3>
+        <div class="result__stats">
+          <div><b>5.6x</b><span>ROAS, up from 2.1x</span></div>
+          <div><b>6 mo</b><span>Time to result</span></div>
+        </div>
+        <p class="desc">Shopping feed rebuilt by product margin, Search split to match, budget scaled into winners.</p>
+      </div>
+      <div class="result">
+        <span class="result__cat">Lead Generation</span>
+        <h3>Home services franchise</h3>
+        <div class="result__stats">
+          <div><b>$24</b><span>CPA, down from $61</span></div>
+          <div><b>2.4x</b><span>Lead volume, same budget</span></div>
+        </div>
+        <p class="desc">Geo-targeting tightened to real service radius, copy rewritten around same-day availability.</p>
+      </div>
+      <div class="result">
+        <span class="result__cat">SaaS</span>
+        <h3>B2B software platform</h3>
+        <div class="result__stats">
+          <div><b>9.1%</b><span>Conv. rate, up from 3.4%</span></div>
+          <div><b>Ongoing</b><span>Engagement</span></div>
+        </div>
+        <p class="desc">Demo-request traffic moved to a dedicated landing page, remarketing layered on top.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="platforms">
+  <div class="container">
+    <div class="section-head on-dark">
+      <span class="kicker gold">What We Manage</span>
+      <h2>Every format that actually sells.</h2>
+    </div>
+    <ul class="plist">
+      <li><span class="plist__num">01</span><div><h3>Search</h3><p>High-intent keyword campaigns built around what your customers are already typing.</p></div><span class="plist__meta">HIGHEST INTENT</span></li>
+      <li><span class="plist__num">02</span><div><h3>Shopping</h3><p>Feed-driven product ads for retailers who need the listing to sell itself.</p></div><span class="plist__meta">ECOMMERCE</span></li>
+      <li><span class="plist__num">03</span><div><h3>Display</h3><p>Retargeting and prospecting across the web, built to stay top of mind without wasting spend.</p></div><span class="plist__meta">RETARGETING</span></li>
+      <li><span class="plist__num">04</span><div><h3>YouTube</h3><p>Video campaigns that earn attention in the first five seconds, not just impressions.</p></div><span class="plist__meta">AWARENESS</span></li>
+      <li><span class="plist__num">05</span><div><h3>Performance Max</h3><p>Automated inventory across every Google surface, guided by the signals we feed it.</p></div><span class="plist__meta">AUTOMATED</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker teal">How We Work</span>
+      <h2>Four stages, on every account.</h2>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="stage__num">01</span><h3>Test</h3><p>Multiple ad variants launch together; A/B testing decides what earns budget.</p></div>
+      <div class="stage"><span class="stage__num">02</span><h3>Target</h3><p>Audience and keyword research narrow spend to who's actually likely to convert.</p></div>
+      <div class="stage"><span class="stage__num">03</span><h3>Optimize</h3><p>Bids, placements and keywords tuned weekly against live performance data.</p></div>
+      <div class="stage"><span class="stage__num">04</span><h3>Scale</h3><p>Winning ads and audiences get the budget; everything else gets cut.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker teal">Why Boost Agency</span>
+      <h2>Six reasons clients stay past the first quarter.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why"><span class="why__mark">01</span><h3>Dedicated specialists</h3><p>A Google Ads-focused team, not a generalist spread across ten platforms.</p></div>
+      <div class="why"><span class="why__mark">02</span><h3>Global delivery</h3><p>Accounts managed across regions, currencies and time zones.</p></div>
+      <div class="why"><span class="why__mark">03</span><h3>Audience research first</h3><p>We study your niche and buyers before a single dollar is spent.</p></div>
+      <div class="why"><span class="why__mark">04</span><h3>Creative that converts</h3><p>Ad copy and assets built to earn the click and the sale.</p></div>
+      <div class="why"><span class="why__mark">05</span><h3>Search-aligned targeting</h3><p>Keyword alignment that extends reach beyond the ad itself.</p></div>
+      <div class="why"><span class="why__mark">06</span><h3>Full transparency</h3><p>You see the same dashboards and numbers we're working from.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker teal">Questions</span>
+      <h2>Before you ask, we'll answer.</h2>
+    </div>
+    <details open>
+      <summary>Why should my business hire a Google Ads agency?</summary>
+      <p>Google Ads rewards accounts that are structured, tested and optimized correctly from day one — mistakes are expensive because they're paid for in real time. An agency brings the platform experience and reporting discipline to spend efficiently instead of learning on your budget.</p>
+    </details>
+    <details>
+      <summary>How quickly can Google Ads generate results?</summary>
+      <p>Search campaigns can start driving qualified traffic within days of launch. Reliable performance data — enough to make scaling decisions — typically takes 2 to 4 weeks.</p>
+    </details>
+    <details>
+      <summary>What's your minimum ad spend?</summary>
+      <p>We typically work with accounts spending $2,000 a month or more. Below that, most platforms can't gather enough data fast enough to optimize meaningfully.</p>
+    </details>
+    <details>
+      <summary>Do you require long-term contracts?</summary>
+      <p>No. Most clients start on a 3-month initial term to get through the testing phase, then move to month-to-month.</p>
+    </details>
+    <details>
+      <summary>Who owns the ad account and the data?</summary>
+      <p>You do. Accounts are built under your own Google Ads login, and you keep full access if the engagement ever ends.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="audit">
+  <div class="container">
+    <div class="final__grid">
+      <div>
+        <span class="kicker gold">Last Step</span>
+        <h2>Your competitors are winning searches you already paid to lose.</h2>
+        <p>Every week an account runs unaudited is a week of budget spent finding out the hard way. Get the free audit — see exactly where it's leaking before you spend another dollar.</p>
+        <a href="#heroForm" class="btn btn-ink">Or Schedule A Call Instead →</a>
+      </div>
+      <form class="final-form" id="finalForm" onsubmit="return false;">
+        <div class="form-default">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" required></div>
+          <div class="field-row">
+            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" required></div>
+            <div class="field"><label for="f-budget">Monthly budget</label>
+              <select id="f-budget" required>
+                <option value="">Select</option>
+                <option>Under $1,000</option>
+                <option>$1,000 – $5,000</option>
+                <option>$5,000 – $20,000</option>
+                <option>$20,000+</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;margin-top:16px;">Get My Free Audit →</button>
+        </div>
+        <div class="form-success" hidden>
+          <h3 style="color:var(--white);">Request received.</h3>
+          <p style="color:#9FB2B4;">We'll follow up within one business day.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function(){
+    document.querySelectorAll('form').forEach(function(form){
+      form.addEventListener('submit', function(){
+        form.querySelector('.form-default').hidden = true;
+        form.querySelector('.form-success').hidden = false;
+      });
+    });
+  })();
+</script>
+
+
+<nav class="demo-gallery-nav" aria-label="Template gallery navigation">
+<style>
+.demo-gallery-nav{background:#0b0d12;color:#fff;padding:34px 20px 28px;font-family:Arial,Helvetica,sans-serif;border-top:3px solid #2a2f3a}
+.demo-gallery-nav *{box-sizing:border-box}
+.demo-gallery-nav .dgn-inner{max-width:1180px;margin:0 auto}
+.demo-gallery-nav h4{margin:0 0 18px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#8b95a8;font-weight:700}
+.demo-gallery-nav .dgn-groups{display:flex;flex-wrap:wrap;gap:30px}
+.demo-gallery-nav .dgn-group{min-width:150px}
+.demo-gallery-nav .dgn-group strong{display:block;font-size:12px;color:#ffb14e;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px}
+.demo-gallery-nav .dgn-group a{display:block;color:#d7dbea;font-size:13px;text-decoration:none;margin:7px 0;opacity:.82}
+.demo-gallery-nav .dgn-group a:hover{opacity:1;text-decoration:underline}
+.demo-gallery-nav .dgn-group a.current{color:#fff;font-weight:700;opacity:1}
+@media(max-width:600px){.demo-gallery-nav .dgn-groups{gap:22px}}
+</style>
+<div class="dgn-inner">
+<h4>Template Gallery</h4>
+<div class="dgn-groups">
+<div class="dgn-group">
+<strong>Ads Approved</strong>
+<a href="ads-approved-home.html">Home</a>
+<a href="ads-approved-services.html">Services</a>
+<a href="ads-approved-about.html">About Us</a>
+<a href="ads-approved-contact.html">Contact Us</a>
+</div>
+<div class="dgn-group">
+<strong>Black Hat Ads</strong>
+<a href="blackhat-ads.html">Service Page</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Ad Agency</strong>
+<a href="boost-ad-agency-services.html">Service Pages</a>
+<a href="boost-ad-agency-restricted-niche.html">Restricted Niche</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Agency Ltd</strong>
+<a href="boost-agency-ltd.html" class="current">Landing Page</a>
+</div>
+<div class="dgn-group">
+<strong>Cloaker Agency</strong>
+<a href="cloaker-agency.html">Home</a>
+</div>
+<div class="dgn-group">
+<strong>CryptoAds</strong>
+<a href="cryptoads.html">Home</a>
+</div>
+</div>
+</div>
+</nav>
+

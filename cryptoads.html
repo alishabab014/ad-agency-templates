@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CryptoAds — Web3 Advertising & Growth</title>
+<meta name="description" content="CryptoAds helps Web3, blockchain and fintech brands grow through strategic advertising, marketing and measurable digital campaigns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --bg:#03050b;--panel:#090d17;--panel2:#0d1321;--line:#1b2435;
+ --text:#f5f7fb;--muted:#8e9ab0;--blue:#5b8cff;--violet:#9b6cff;
+ --cyan:#39d8ff;--green:#45e6a1;--max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+ font-family:Inter,Arial,sans-serif;color:var(--text);background:
+ radial-gradient(circle at 85% 12%,rgba(91,140,255,.17),transparent 27%),
+ radial-gradient(circle at 15% 30%,rgba(155,108,255,.10),transparent 25%),var(--bg);
+ line-height:1.6;overflow-x:hidden
+}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+ background-size:70px 70px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
+a{text-decoration:none;color:inherit}.container{width:min(var(--max),92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(3,5,11,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Space Grotesk";font-size:24px;font-weight:700;letter-spacing:-1px}
+.logo i{font-style:normal;color:var(--blue)}
+.links{display:flex;gap:28px;align-items:center}.links a{font-size:13px;color:#b7c0d0}.links a:hover{color:white}
+.nav-cta,.primary{background:linear-gradient(135deg,var(--blue),var(--violet));box-shadow:0 12px 35px rgba(91,140,255,.20)}
+.nav-cta{padding:11px 17px;border-radius:9px;color:white!important;font-weight:700!important}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+
+.hero{min-height:760px;display:flex;align-items:center;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.eyebrow{color:#82a9ff;font-size:11px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;margin-bottom:18px}
+h1,h2,h3{font-family:"Space Grotesk";letter-spacing:-1.5px}
+h1{font-size:clamp(48px,6vw,78px);line-height:1.01;margin-bottom:25px}
+.gradient{background:linear-gradient(90deg,#fff 5%,#76a4ff 48%,#b18cff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:620px;color:var(--muted);font-size:17px;margin-bottom:32px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:14px 21px;border-radius:10px;font-size:14px;font-weight:700}.secondary{border:1px solid var(--line);background:rgba(255,255,255,.035)}
+.trust{margin-top:38px;color:#69758a;font-size:10px;letter-spacing:2px;display:flex;gap:25px;flex-wrap:wrap}
+
+.orbit{height:470px;position:relative;display:grid;place-items:center}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(91,140,255,.22);border-radius:50%;transform:rotate(-20deg)}
+.orbit:before{width:390px;height:190px}.orbit:after{width:450px;height:240px;border-color:rgba(155,108,255,.18);transform:rotate(25deg)}
+.core{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;position:relative;z-index:2;
+ background:radial-gradient(circle at 35% 30%,#789dff,#4e6de4 35%,#1b2147 70%,#080a15);
+ box-shadow:0 0 90px rgba(91,140,255,.35),inset 0 0 35px rgba(255,255,255,.12)}
+.core span{font-family:"Space Grotesk";font-size:31px;font-weight:700}
+.float{position:absolute;z-index:3;padding:14px 16px;border:1px solid var(--line);background:rgba(9,13,23,.86);backdrop-filter:blur(15px);border-radius:13px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.float small{display:block;color:var(--muted);font-size:9px;margin-bottom:3px}.float b{font-size:16px}.f1{top:45px;right:20px}.f2{bottom:55px;left:5px}.f3{bottom:5px;right:35px}.up{color:var(--green);font-size:10px}
+
+section{padding:110px 0}.head{max-width:690px;margin-bottom:48px}.head h2{font-size:clamp(35px,5vw,54px);line-height:1.08}.head p{color:var(--muted);margin-top:15px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{padding:28px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:#33476d;background:linear-gradient(145deg,rgba(91,140,255,.09),rgba(255,255,255,.02))}
+.icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:23px;
+ background:linear-gradient(135deg,rgba(91,140,255,.18),rgba(155,108,255,.18));font-size:20px}
+.card h3{font-size:19px;margin-bottom:9px}.card p{color:var(--muted);font-size:13px}.arrow{display:inline-block;color:#82a9ff;font-size:12px;font-weight:700;margin-top:18px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:27px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+.stat b{font-family:"Space Grotesk";font-size:36px;display:block}.stat span{color:var(--muted);font-size:12px}
+
+.process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:28px 22px;border-right:1px solid var(--line)}.step:last-child{border:0}
+.num{color:#6d9bff;font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:25px}.step h3{font-size:18px;margin-bottom:9px}.step p{color:var(--muted);font-size:13px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.feature-box{border:1px solid var(--line);border-radius:22px;padding:35px;background:linear-gradient(145deg,rgba(91,140,255,.09),rgba(155,108,255,.04))}
+.feature-box ul{list-style:none}.feature-box li{padding:13px 0;border-bottom:1px solid var(--line);color:#bdc6d5;font-size:13px}.feature-box li:before{content:"✓";color:var(--green);margin-right:12px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}.check{padding:17px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);font-size:12px}.check b{display:block;margin-bottom:4px}.check span{color:var(--muted)}
+
+.quote{padding:30px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.quote p{color:#cbd3df;font-size:14px;margin-bottom:20px}.person{font-weight:700;font-size:13px}.role{color:var(--muted);font-size:11px}
+
+.cta{padding:85px 35px;text-align:center;border:1px solid #263653;border-radius:26px;background:radial-gradient(circle at center,rgba(91,140,255,.16),transparent 62%),rgba(255,255,255,.025)}
+.cta h2{font-size:clamp(35px,5vw,55px);max-width:760px;margin:auto;line-height:1.08}.cta p{max-width:600px;color:var(--muted);margin:17px auto 28px}
+
+footer{border-top:1px solid var(--line);padding:65px 0 25px}.footer{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:45px}.footer p{color:var(--muted);font-size:12px;max-width:320px;margin-top:13px}.footer h4{font-size:13px;margin-bottom:14px}.footer a{display:block;color:var(--muted);font-size:12px;margin:9px 0}.copy{border-top:1px solid var(--line);margin-top:45px;padding-top:20px;color:#596579;font-size:10px}
+
+@media(max-width:900px){.links{display:none}.menu{display:block}.hero{padding:80px 0}.hero-grid,.split{grid-template-columns:1fr}.orbit{margin-top:30px}.grid3{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.footer{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){section{padding:75px 0}h1{font-size:47px}.grid3,.stats,.process,.footer,.checks{grid-template-columns:1fr}.orbit{height:370px}.core{width:125px;height:125px}.core span{font-size:24px}.orbit:before{width:290px;height:145px}.orbit:after{width:330px;height:180px}.f1{right:0}.f2{left:0}.f3{right:0}.trust{gap:13px}.cta{padding:60px 20px}}
+</style>
+</head>
+
+<body>
+<header>
+<div class="container">
+<nav>
+<a class="logo" href="#">Crypto<i>Ads</i></a>
+<div class="links">
+<a href="#services">Services</a>
+<a href="#process">Process</a>
+<a href="#results">Results</a>
+<a href="#about">About</a>
+<a href="#contact" class="nav-cta">Get Started →</a>
+</div>
+<button class="menu" aria-label="Open menu">☰</button>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Web3 Advertising & Growth</div>
+<h1>Make your <span class="gradient">crypto brand</span> impossible to ignore.</h1>
+<p>Strategic advertising and digital growth solutions for crypto, blockchain, Web3 and fintech businesses that want measurable results.</p>
+<div class="actions">
+<a href="#contact" class="btn primary">Start a Strategy Call →</a>
+<a href="#services" class="btn secondary">Explore Services</a>
+</div>
+<div class="trust"><span>CRYPTO</span><span>BLOCKCHAIN</span><span>WEB3</span><span>FINTECH</span><span>FOREX</span></div>
+</div>
+
+<div class="orbit">
+<div class="core"><span>CA</span></div>
+<div class="float f1"><small>CAMPAIGN REACH</small><b>2.8M</b><div class="up">↑ 24.8%</div></div>
+<div class="float f2"><small>QUALIFIED LEADS</small><b>18.4K</b><div class="up">↑ 31.2%</div></div>
+<div class="float f3"><small>AVG. CTR</small><b>6.8%</b></div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="head"><div class="eyebrow">What We Do</div><h2>One growth partner for your Web3 business.</h2><p>Build awareness, acquire users and turn marketing activity into measurable business growth.</p></div>
+<div class="grid3">
+<article class="card"><div class="icon">◈</div><h3>Blockchain Advertising</h3><p>Campaign strategy and audience targeting for blockchain and Web3 businesses.</p><a class="arrow" href="#contact">Explore service →</a></article>
+<article class="card"><div class="icon">₿</div><h3>Crypto Marketing</h3><p>Integrated marketing designed to strengthen your crypto brand and acquisition funnel.</p><a class="arrow" href="#contact">Explore service →</a></article>
+<article class="card"><div class="icon">◎</div><h3>Coin & Token Promotion</h3><p>Launch-focused promotion strategies for token and crypto projects.</p><a class="arrow" href="#contact">Explore service →</a></article>
+<article class="card"><div class="icon">↗</div><h3>Lead Generation</h3><p>Build targeted acquisition funnels that focus on qualified prospects and conversions.</p><a class="arrow" href="#contact">Explore service →</a></article>
+<article class="card"><div class="icon">✓</div><h3>Crypto Licensing</h3><p>Practical guidance for licensing, compliance preparation and market entry.</p><a class="arrow" href="#contact">Explore service →</a></article>
+<article class="card"><div class="icon">◉</div><h3>Forex Marketing</h3><p>Performance-oriented digital marketing for financial and forex brands.</p><a class="arrow" href="#contact">Explore service →</a></article>
+</div>
+</div>
+</section>
+
+<section id="results">
+<div class="container">
+<div class="head"><div class="eyebrow">Built Around Performance</div><h2>Marketing that can be measured.</h2><p>Track the metrics that matter and use campaign data to make better growth decisions.</p></div>
+<div class="stats">
+<div class="stat"><b>2.8M</b><span>Campaign reach</span></div>
+<div class="stat"><b>18.4K</b><span>Qualified leads</span></div>
+<div class="stat"><b>6.8%</b><span>Average CTR</span></div>
+<div class="stat"><b>24/7</b><span>Performance monitoring</span></div>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="head"><div class="eyebrow">Our Process</div><h2>From strategy to scalable growth.</h2></div>
+<div class="process">
+<div class="step"><div class="num">01 — DISCOVER</div><h3>Understand</h3><p>We study your project, audience, competitors and growth goals.</p></div>
+<div class="step"><div class="num">02 — STRATEGIZE</div><h3>Plan</h3><p>We build a channel strategy, messaging framework and measurable plan.</p></div>
+<div class="step"><div class="num">03 — LAUNCH</div><h3>Execute</h3><p>Campaigns, creatives, tracking and acquisition systems go live.</p></div>
+<div class="step"><div class="num">04 — OPTIMIZE</div><h3>Scale</h3><p>We analyze performance and continuously improve what works.</p></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container split">
+<div>
+<div class="eyebrow">Why CryptoAds</div>
+<h2>A modern marketing system for a fast-moving industry.</h2>
+<p style="color:var(--muted);margin-top:18px">Crypto audiences move quickly. Your marketing needs clear positioning, relevant targeting, reliable measurement and a strategy built around sustainable growth.</p>
+<div class="checks">
+<div class="check"><b>Web3 Focus</b><span>Built around crypto and blockchain markets.</span></div>
+<div class="check"><b>Data Driven</b><span>Decisions supported by campaign performance.</span></div>
+<div class="check"><b>Growth Mindset</b><span>Optimize instead of simply launching campaigns.</span></div>
+<div class="check"><b>Clear Reporting</b><span>Know what is working and why.</span></div>
+</div>
+<a href="#contact" class="btn primary">Talk to an Expert →</a>
+</div>
+<div class="feature-box">
+<div class="eyebrow">What You Get</div>
+<ul>
+<li>Campaign and channel strategy</li>
+<li>Audience and competitor research</li>
+<li>Conversion-focused landing page planning</li>
+<li>Tracking and performance measurement</li>
+<li>Campaign optimization and reporting</li>
+<li>Ongoing growth recommendations</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="head"><div class="eyebrow">Client Perspective</div><h2>Built to make growth easier to understand.</h2></div>
+<div class="grid3">
+<div class="quote"><p>“The strategy gave our team a much clearer path for reaching the right audience and measuring campaign performance.”</p><div class="person">Michael Anderson</div><div class="role">Web3 Founder</div></div>
+<div class="quote"><p>“We moved from scattered marketing activity to a structured acquisition process with clear priorities.”</p><div class="person">Daniel Roberts</div><div class="role">Blockchain Project</div></div>
+<div class="quote"><p>“The biggest improvement was understanding which channels actually contributed to our growth.”</p><div class="person">Sophia Martinez</div><div class="role">Fintech Marketing</div></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="cta">
+<div class="eyebrow">Ready to Grow?</div>
+<h2>Let's build your next Web3 growth campaign.</h2>
+<p>Tell us about your project, goals and target audience. We'll help you identify the right marketing approach.</p>
+<a href="mailto:hello@cryptoads.live" class="btn primary">Start a Conversation →</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer">
+<div><a class="logo" href="#">Crypto<i>Ads</i></a><p>Advertising and digital growth solutions for crypto, blockchain, Web3 and financial brands.</p></div>
+<div><h4>Services</h4><a href="#services">Blockchain Ads</a><a href="#services">Crypto Marketing</a><a href="#services">Coin Promotion</a><a href="#services">Lead Generation</a></div>
+<div><h4>Company</h4><a href="#about">About</a><a href="#process">Process</a><a href="#results">Results</a><a href="#contact">Contact</a></div>
+<div><h4>Contact</h4><a href="mailto:hello@cryptoads.live">hello@cryptoads.live</a><a href="#contact">Get in touch →</a></div>
+</div>
+<div class="copy">© 2026 CryptoAds. All rights reserved.</div>
+</div>
+</footer>
+
+<nav class="demo-gallery-nav" aria-label="Template gallery navigation">
+<style>
+.demo-gallery-nav{background:#0b0d12;color:#fff;padding:34px 20px 28px;font-family:Arial,Helvetica,sans-serif;border-top:3px solid #2a2f3a}
+.demo-gallery-nav *{box-sizing:border-box}
+.demo-gallery-nav .dgn-inner{max-width:1180px;margin:0 auto}
+.demo-gallery-nav h4{margin:0 0 18px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#8b95a8;font-weight:700}
+.demo-gallery-nav .dgn-groups{display:flex;flex-wrap:wrap;gap:30px}
+.demo-gallery-nav .dgn-group{min-width:150px}
+.demo-gallery-nav .dgn-group strong{display:block;font-size:12px;color:#ffb14e;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px}
+.demo-gallery-nav .dgn-group a{display:block;color:#d7dbea;font-size:13px;text-decoration:none;margin:7px 0;opacity:.82}
+.demo-gallery-nav .dgn-group a:hover{opacity:1;text-decoration:underline}
+.demo-gallery-nav .dgn-group a.current{color:#fff;font-weight:700;opacity:1}
+@media(max-width:600px){.demo-gallery-nav .dgn-groups{gap:22px}}
+</style>
+<div class="dgn-inner">
+<h4>Template Gallery</h4>
+<div class="dgn-groups">
+<div class="dgn-group">
+<strong>Ads Approved</strong>
+<a href="ads-approved-home.html">Home</a>
+<a href="ads-approved-services.html">Services</a>
+<a href="ads-approved-about.html">About Us</a>
+<a href="ads-approved-contact.html">Contact Us</a>
+</div>
+<div class="dgn-group">
+<strong>Black Hat Ads</strong>
+<a href="blackhat-ads.html">Service Page</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Ad Agency</strong>
+<a href="boost-ad-agency-services.html">Service Pages</a>
+<a href="boost-ad-agency-restricted-niche.html">Restricted Niche</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Agency Ltd</strong>
+<a href="boost-agency-ltd.html">Landing Page</a>
+</div>
+<div class="dgn-group">
+<strong>Cloaker Agency</strong>
+<a href="cloaker-agency.html">Home</a>
+</div>
+<div class="dgn-group">
+<strong>CryptoAds</strong>
+<a href="cryptoads.html" class="current">Home</a>
+</div>
+</div>
+</div>
+</nav>
+
+</body>
+</html>

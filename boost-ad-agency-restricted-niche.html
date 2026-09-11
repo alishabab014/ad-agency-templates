@@ -1,0 +1,3380 @@
+<!-- =========================================================
+BOOST AD AGENCY
+RESTRICTED NICHE SERVICE PAGE
+PREMIUM RESPONSIVE TEMPLATE
+========================================================= -->
+
+<section class="baa-restricted-premium">
+
+<style>
+
+/* =========================================================
+   BRAND VARIABLES
+========================================================= */
+
+.baa-restricted-premium{
+  --primary:#0093AB;
+  --secondary:#FFD124;
+  --text:#6E6E6E;
+  --dark:#2D2D2D;
+  --white:#FFFFFF;
+  --line:#DADADA;
+  --deep:#006778;
+  --light:#F3F3F3;
+  --soft-white:#FFFFFFD4;
+  --bright:#00AFC1;
+
+  font-family:"Roboto",Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.6;
+  overflow:hidden;
+}
+
+.baa-restricted-premium *{
+  box-sizing:border-box;
+}
+
+.baa-rp-container{
+  width:min(1190px,92%);
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.baa-rp-reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.2,.65,.2,1);
+}
+
+.baa-rp-reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.baa-rp-delay-1{
+  transition-delay:.12s;
+}
+
+.baa-rp-delay-2{
+  transition-delay:.24s;
+}
+
+.baa-rp-delay-3{
+  transition-delay:.36s;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.baa-rp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:53px;
+  padding:0 25px;
+  border-radius:5px;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.baa-rp-btn-primary{
+  background:var(--secondary);
+  color:var(--dark);
+  position:relative;
+  overflow:hidden;
+}
+
+.baa-rp-btn-primary:before{
+  content:"";
+  position:absolute;
+  width:35%;
+  height:180%;
+  background:rgba(255,255,255,.25);
+  top:-40%;
+  left:-70%;
+  transform:skewX(-22deg);
+  transition:.6s ease;
+}
+
+.baa-rp-btn-primary:hover:before{
+  left:120%;
+}
+
+.baa-rp-btn-primary:hover{
+  color:var(--dark);
+  transform:translateY(-3px);
+  box-shadow:0 15px 30px rgba(0,0,0,.16);
+}
+
+.baa-rp-btn-secondary{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+}
+
+.baa-rp-btn-secondary:hover{
+  color:#fff;
+  border-color:var(--bright);
+  transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.baa-rp-hero{
+  position:relative;
+  min-height:760px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(0,175,193,.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #26383c 0%,
+      #2D2D2D 46%,
+      #232728 100%
+    );
+  overflow:hidden;
+}
+
+.baa-rp-hero:before{
+  content:"";
+  position:absolute;
+  width:640px;
+  height:640px;
+  border:1px solid rgba(255,255,255,.055);
+  border-radius:50%;
+  right:-260px;
+  top:-230px;
+}
+
+.baa-rp-hero:after{
+  content:"";
+  position:absolute;
+  width:410px;
+  height:410px;
+  border:1px solid rgba(255,209,36,.10);
+  border-radius:50%;
+  left:-220px;
+  bottom:-230px;
+}
+
+.baa-rp-hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:75px;
+  align-items:center;
+}
+
+.baa-rp-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:21px;
+  color:var(--secondary);
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.6px;
+}
+
+.baa-rp-kicker i{
+  display:block;
+  width:8px;
+  height:8px;
+  background:var(--secondary);
+  border-radius:50%;
+  box-shadow:0 0 0 7px rgba(255,209,36,.08);
+}
+
+.baa-rp-hero h1{
+  margin:0 0 23px;
+  color:#fff;
+  font-size:clamp(43px,5.3vw,73px);
+  line-height:1.01;
+  letter-spacing:-2.2px;
+  font-weight:800;
+}
+
+.baa-rp-hero h1 span{
+  color:var(--bright);
+}
+
+.baa-rp-hero-text{
+  max-width:650px;
+  margin:0 0 32px;
+  color:var(--soft-white);
+  font-size:17px;
+}
+
+.baa-rp-hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+
+/* =========================================================
+   HERO VISUAL - POLICY FRAME
+========================================================= */
+
+.baa-rp-hero-art{
+  position:relative;
+  min-height:480px;
+}
+
+.baa-rp-frame{
+  position:absolute;
+  width:390px;
+  height:440px;
+  right:8px;
+  top:10px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.035);
+  transform:skewY(-4deg);
+}
+
+.baa-rp-frame-inner{
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(0,175,193,.24);
+  padding:23px;
+  transform:skewY(4deg);
+}
+
+.baa-rp-frame-title{
+  color:var(--secondary);
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  margin-bottom:20px;
+}
+
+.baa-rp-frame-heading{
+  color:#fff;
+  font-size:27px;
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:27px;
+}
+
+.baa-rp-check{
+  display:flex;
+  gap:11px;
+  align-items:flex-start;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.baa-rp-check:last-child{
+  border-bottom:0;
+}
+
+.baa-rp-check-mark{
+  width:23px;
+  height:23px;
+  flex:0 0 23px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,147,171,.2);
+  color:var(--bright);
+  font-size:10px;
+  margin-top:1px;
+}
+
+.baa-rp-check span{
+  color:#ccd0d1;
+  font-size:13px;
+}
+
+.baa-rp-badge{
+  position:absolute;
+  left:-25px;
+  top:55px;
+  width:150px;
+  padding:17px;
+  background:var(--secondary);
+  color:var(--dark);
+  box-shadow:0 20px 40px rgba(0,0,0,.16);
+  animation:baaRpFloat 5s ease-in-out infinite;
+}
+
+.baa-rp-badge small{
+  display:block;
+  text-transform:uppercase;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:5px;
+}
+
+.baa-rp-badge strong{
+  display:block;
+  font-size:20px;
+  line-height:1.1;
+}
+
+.baa-rp-badge-two{
+  position:absolute;
+  right:-5px;
+  bottom:20px;
+  width:185px;
+  padding:18px;
+  background:#006778;
+  border:1px solid rgba(255,255,255,.1);
+  animation:baaRpFloat 5s ease-in-out 1s infinite;
+}
+
+.baa-rp-badge-two small{
+  display:block;
+  color:rgba(255,255,255,.62);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:5px;
+}
+
+.baa-rp-badge-two strong{
+  display:block;
+  color:#fff;
+  font-size:20px;
+}
+
+@keyframes baaRpFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+
+/* =========================================================
+   QUICK BAR
+========================================================= */
+
+.baa-rp-quick{
+  background:var(--primary);
+}
+
+.baa-rp-quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.baa-rp-quick-item{
+  padding:21px 15px;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.14);
+}
+
+.baa-rp-quick-item:last-child{
+  border-right:0;
+}
+
+.baa-rp-quick-item strong{
+  display:block;
+  color:var(--secondary);
+  font-size:22px;
+  line-height:1;
+  margin-bottom:4px;
+}
+
+.baa-rp-quick-item span{
+  color:#fff;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+
+/* =========================================================
+   EDITORIAL INTRO
+========================================================= */
+
+.baa-rp-intro{
+  padding:105px 0;
+  background:#fff;
+}
+
+.baa-rp-intro-grid{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:90px;
+  align-items:start;
+}
+
+.baa-rp-section-label{
+  color:var(--primary);
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  margin-bottom:12px;
+}
+
+.baa-rp-intro h2{
+  margin:0;
+  color:var(--dark);
+  font-size:clamp(35px,4.3vw,53px);
+  line-height:1.08;
+  letter-spacing:-1px;
+}
+
+.baa-rp-intro-copy p{
+  color:var(--text);
+  font-size:17px;
+  margin:0 0 19px;
+}
+
+.baa-rp-note{
+  margin-top:25px;
+  padding:20px 22px;
+  background:var(--light);
+  border-left:4px solid var(--secondary);
+  color:var(--dark);
+  font-size:14px;
+  font-weight:600;
+}
+
+
+/* =========================================================
+   CHALLENGE SECTION
+========================================================= */
+
+.baa-rp-challenge{
+  padding:100px 0;
+  background:var(--dark);
+  position:relative;
+  overflow:hidden;
+}
+
+.baa-rp-challenge:after{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  border:1px solid rgba(0,175,193,.12);
+  right:-250px;
+  top:-200px;
+}
+
+.baa-rp-challenge-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:75px;
+}
+
+.baa-rp-challenge h2{
+  color:#fff;
+  font-size:clamp(35px,4.2vw,53px);
+  line-height:1.08;
+  margin:0 0 17px;
+}
+
+.baa-rp-challenge-intro{
+  color:var(--soft-white);
+  font-size:15px;
+  margin:0;
+}
+
+.baa-rp-challenge-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.baa-rp-challenge-card{
+  padding:26px;
+  background:#353638;
+  border:1px solid rgba(255,255,255,.07);
+  transition:.3s ease;
+}
+
+.baa-rp-challenge-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(0,175,193,.4);
+}
+
+.baa-rp-challenge-card span{
+  display:block;
+  color:var(--secondary);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:22px;
+}
+
+.baa-rp-challenge-card h3{
+  color:#fff;
+  margin:0 0 7px;
+  font-size:18px;
+}
+
+.baa-rp-challenge-card p{
+  color:#aeb2b3;
+  margin:0;
+  font-size:13px;
+}
+
+
+/* =========================================================
+   CORE SERVICES
+========================================================= */
+
+.baa-rp-services{
+  padding:105px 0;
+  background:var(--light);
+}
+
+.baa-rp-heading{
+  max-width:750px;
+  margin-bottom:48px;
+}
+
+.baa-rp-heading h2{
+  color:var(--dark);
+  font-size:clamp(35px,4.3vw,53px);
+  line-height:1.08;
+  margin:0 0 13px;
+  letter-spacing:-1px;
+}
+
+.baa-rp-heading p{
+  color:var(--text);
+  margin:0;
+  font-size:16px;
+}
+
+.baa-rp-services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.baa-rp-service-card{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  padding:31px;
+  min-height:250px;
+  border:1px solid #e0e6e8;
+  transition:.35s ease;
+}
+
+.baa-rp-service-card:before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:4px;
+  left:0;
+  bottom:0;
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--bright)
+  );
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.35s ease;
+}
+
+.baa-rp-service-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 22px 50px rgba(45,45,45,.08);
+}
+
+.baa-rp-service-card:hover:before{
+  transform:scaleX(1);
+}
+
+.baa-rp-service-number{
+  color:var(--primary);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:34px;
+}
+
+.baa-rp-service-card h3{
+  color:var(--dark);
+  font-size:20px;
+  margin:0 0 10px;
+}
+
+.baa-rp-service-card p{
+  color:var(--text);
+  font-size:14px;
+  margin:0;
+}
+
+
+/* =========================================================
+   STRATEGY PANEL
+========================================================= */
+
+.baa-rp-strategy{
+  padding:105px 0;
+  background:#fff;
+}
+
+.baa-rp-strategy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.baa-rp-strategy h2{
+  color:var(--dark);
+  font-size:clamp(35px,4.2vw,52px);
+  line-height:1.08;
+  margin:0 0 16px;
+}
+
+.baa-rp-strategy-copy{
+  color:var(--text);
+  font-size:16px;
+  margin:0 0 27px;
+}
+
+.baa-rp-strategy-list{
+  display:grid;
+  gap:13px;
+}
+
+.baa-rp-strategy-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.baa-rp-strategy-check{
+  width:25px;
+  height:25px;
+  flex:0 0 25px;
+  background:rgba(0,147,171,.10);
+  border-radius:50%;
+  color:var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:900;
+}
+
+.baa-rp-strategy-item span{
+  color:var(--dark);
+  font-size:14px;
+}
+
+
+/* dashboard */
+
+.baa-rp-dashboard{
+  background:var(--dark);
+  padding:27px;
+  border-radius:12px;
+  box-shadow:0 25px 60px rgba(45,45,45,.13);
+}
+
+.baa-rp-dashboard-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.baa-rp-dashboard-top strong{
+  color:#fff;
+  font-size:15px;
+}
+
+.baa-rp-dashboard-top span{
+  color:var(--secondary);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.baa-rp-dashboard-item{
+  padding:17px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.baa-rp-dashboard-item:last-child{
+  border-bottom:0;
+}
+
+.baa-rp-dashboard-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:9px;
+}
+
+.baa-rp-dashboard-meta span:first-child{
+  color:#a8acad;
+  font-size:12px;
+}
+
+.baa-rp-dashboard-meta span:last-child{
+  color:var(--secondary);
+  font-size:11px;
+  font-weight:700;
+}
+
+.baa-rp-progress{
+  height:5px;
+  background:#434547;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.baa-rp-progress span{
+  display:block;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--bright)
+  );
+  border-radius:20px;
+  width:0;
+  transition:width 1.4s ease;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.baa-rp-process{
+  padding:105px 0;
+  background:var(--light);
+}
+
+.baa-rp-process-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+
+.baa-rp-process-grid:before{
+  content:"";
+  position:absolute;
+  top:34px;
+  left:10%;
+  right:10%;
+  height:1px;
+  background:#cdd6d8;
+}
+
+.baa-rp-process-step{
+  position:relative;
+  text-align:center;
+  padding:0 18px;
+}
+
+.baa-rp-process-number{
+  position:relative;
+  z-index:2;
+  width:69px;
+  height:69px;
+  border-radius:50%;
+  background:var(--light);
+  border:2px solid var(--primary);
+  color:var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 24px;
+  font-size:12px;
+  font-weight:800;
+  transition:.3s ease;
+}
+
+.baa-rp-process-step:hover .baa-rp-process-number{
+  background:var(--primary);
+  color:#fff;
+  transform:scale(1.08);
+}
+
+.baa-rp-process-step h3{
+  color:var(--dark);
+  font-size:19px;
+  margin:0 0 8px;
+}
+
+.baa-rp-process-step p{
+  color:var(--text);
+  font-size:13px;
+  margin:0 auto;
+  max-width:210px;
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.baa-rp-testimonials{
+  padding:110px 0;
+  background:var(--dark);
+}
+
+.baa-rp-testimonial-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 50px;
+}
+
+.baa-rp-testimonial-heading .baa-rp-section-label{
+  color:var(--secondary);
+}
+
+.baa-rp-testimonial-heading h2{
+  color:#fff;
+  font-size:clamp(35px,4.2vw,52px);
+  line-height:1.08;
+  margin:0 0 13px;
+}
+
+.baa-rp-testimonial-heading p{
+  color:var(--soft-white);
+  font-size:15px;
+  margin:0;
+}
+
+.baa-rp-slider{
+  position:relative;
+}
+
+.baa-rp-slider-window{
+  overflow:hidden;
+}
+
+.baa-rp-slider-track{
+  display:flex;
+  transition:transform .65s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+
+.baa-rp-testimonial-card{
+  flex:0 0 calc(33.333333% - 14px);
+  margin-right:21px;
+  background:#383a3c;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;
+  padding:31px;
+  min-height:335px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+.baa-rp-testimonial-card:before{
+  content:"";
+  width:48px;
+  height:3px;
+  position:absolute;
+  top:0;
+  left:0;
+  background:var(--secondary);
+}
+
+.baa-rp-stars{
+  color:var(--secondary);
+  letter-spacing:3px;
+  font-size:14px;
+  margin-bottom:22px;
+}
+
+.baa-rp-testimonial-card p{
+  color:#c6c9ca;
+  font-size:14px;
+  line-height:1.85;
+  margin:0 0 27px;
+}
+
+.baa-rp-client{
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.baa-rp-avatar{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+}
+
+.baa-rp-client strong{
+  color:#fff;
+  display:block;
+  font-size:14px;
+}
+
+.baa-rp-client span{
+  display:block;
+  color:#858b8d;
+  font-size:11px;
+}
+
+.baa-rp-slider-arrow{
+  position:absolute;
+  z-index:3;
+  top:50%;
+  transform:translateY(-50%);
+  width:47px;
+  height:47px;
+  border-radius:50%;
+  background:#202223;
+  border:1px solid rgba(255,255,255,.13);
+  color:var(--secondary);
+  cursor:pointer;
+  transition:.25s ease;
+  font-size:18px;
+}
+
+.baa-rp-slider-arrow:hover{
+  background:var(--secondary);
+  color:var(--dark);
+}
+
+.baa-rp-prev{
+  left:-24px;
+}
+
+.baa-rp-next{
+  right:-24px;
+}
+
+.baa-rp-dots{
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  margin-top:30px;
+}
+
+.baa-rp-dot{
+  width:8px;
+  height:8px;
+  border:0;
+  padding:0;
+  border-radius:50%;
+  background:#56595a;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.baa-rp-dot.active{
+  width:25px;
+  border-radius:10px;
+  background:var(--secondary);
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.baa-rp-faq{
+  padding:105px 0;
+  background:#fff;
+}
+
+.baa-rp-faq-heading{
+  max-width:730px;
+  margin:0 auto 44px;
+  text-align:center;
+}
+
+.baa-rp-faq-heading h2{
+  color:var(--dark);
+  margin:0 0 12px;
+  font-size:clamp(35px,4vw,50px);
+  line-height:1.08;
+}
+
+.baa-rp-faq-heading p{
+  color:var(--text);
+  margin:0;
+  font-size:15px;
+}
+
+.baa-rp-faq-list{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.baa-rp-faq-item{
+  background:#fff;
+  border:1px solid #e0e5e7;
+  border-radius:6px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+.baa-rp-faq-item summary{
+  position:relative;
+  list-style:none;
+  cursor:pointer;
+  padding:20px 55px 20px 22px;
+  color:var(--dark);
+  font-weight:700;
+  font-size:14px;
+}
+
+.baa-rp-faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.baa-rp-faq-item summary:after{
+  content:"+";
+  position:absolute;
+  right:21px;
+  top:14px;
+  font-size:25px;
+  font-weight:400;
+  color:var(--primary);
+}
+
+.baa-rp-faq-item[open] summary:after{
+  content:"−";
+}
+
+.baa-rp-faq-answer{
+  padding:0 22px 21px;
+  color:var(--text);
+  font-size:14px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.baa-rp-contact{
+  padding:110px 0;
+  background:
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(0,175,193,.17),
+      transparent 30%
+    ),
+    var(--dark);
+}
+
+.baa-rp-contact-grid{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:75px;
+  align-items:start;
+}
+
+.baa-rp-contact-copy .baa-rp-section-label{
+  color:var(--secondary);
+}
+
+.baa-rp-contact-copy h2{
+  color:#fff;
+  font-size:clamp(36px,4.2vw,54px);
+  line-height:1.08;
+  margin:0 0 16px;
+}
+
+.baa-rp-contact-copy > p{
+  color:var(--soft-white);
+  font-size:16px;
+  margin:0 0 28px;
+}
+
+.baa-rp-contact-points{
+  display:grid;
+  gap:13px;
+}
+
+.baa-rp-contact-point{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.baa-rp-contact-point-icon{
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  flex:0 0 27px;
+  background:var(--primary);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+}
+
+.baa-rp-contact-point span{
+  color:#d2d5d6;
+  font-size:14px;
+}
+
+
+/* FORM */
+
+.baa-rp-form-box{
+  background:#fff;
+  border-radius:10px;
+  padding:34px;
+  box-shadow:0 25px 70px rgba(0,0,0,.18);
+}
+
+.baa-rp-form-box h3{
+  color:var(--dark);
+  font-size:25px;
+  margin:0 0 5px;
+}
+
+.baa-rp-form-box > p{
+  color:var(--text);
+  font-size:13px;
+  margin:0 0 24px;
+}
+
+.baa-rp-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.baa-rp-field{
+  display:flex;
+  flex-direction:column;
+}
+
+.baa-rp-full{
+  grid-column:1 / -1;
+}
+
+.baa-rp-field label{
+  color:var(--dark);
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.baa-rp-field input,
+.baa-rp-field select,
+.baa-rp-field textarea{
+  width:100%;
+  border:1px solid #dce2e4;
+  background:#fafbfb;
+  color:var(--dark);
+  border-radius:5px;
+  padding:13px;
+  font-family:inherit;
+  font-size:13px;
+  outline:none;
+  transition:.25s ease;
+}
+
+.baa-rp-field input:focus,
+.baa-rp-field select:focus,
+.baa-rp-field textarea:focus{
+  border-color:var(--primary);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(0,147,171,.08);
+}
+
+.baa-rp-field textarea{
+  min-height:125px;
+  resize:vertical;
+}
+
+.baa-rp-submit{
+  width:100%;
+  min-height:52px;
+  margin-top:18px;
+  border:0;
+  border-radius:5px;
+  background:var(--primary);
+  color:#fff;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.baa-rp-submit:hover{
+  background:var(--deep);
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(0,103,120,.18);
+}
+
+.baa-rp-form-note{
+  color:#8a9092;
+  text-align:center;
+  font-size:10px;
+  margin-top:12px;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.baa-rp-bottom{
+  background:var(--primary);
+  padding:0;
+}
+
+.baa-rp-bottom-box{
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.baa-rp-bottom-box:before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.11);
+  right:-80px;
+  top:-120px;
+}
+
+.baa-rp-bottom-box:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+  left:-90px;
+  bottom:-100px;
+}
+
+.baa-rp-bottom-box h2{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  margin:0 0 13px;
+  font-size:clamp(34px,4vw,51px);
+  line-height:1.08;
+}
+
+.baa-rp-bottom-box p{
+  position:relative;
+  z-index:2;
+  color:rgba(255,255,255,.78);
+  max-width:650px;
+  margin:0 auto 26px;
+  font-size:15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+  .baa-rp-hero-grid,
+  .baa-rp-intro-grid,
+  .baa-rp-challenge-grid,
+  .baa-rp-strategy-grid,
+  .baa-rp-contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .baa-rp-services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .baa-rp-process-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:45px 10px;
+  }
+
+  .baa-rp-process-grid:before{
+    display:none;
+  }
+
+  .baa-rp-testimonial-card{
+    flex:0 0 calc(50% - 10px);
+  }
+
+  .baa-rp-hero-art{
+    max-width:650px;
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  .baa-rp-hero{
+    min-height:auto;
+    padding:72px 0 80px;
+  }
+
+  .baa-rp-hero h1{
+    font-size:42px;
+    letter-spacing:-1px;
+  }
+
+  .baa-rp-hero-actions{
+    flex-direction:column;
+  }
+
+  .baa-rp-btn{
+    width:100%;
+  }
+
+  .baa-rp-hero-art{
+    min-height:360px;
+  }
+
+  .baa-rp-frame{
+    width:290px;
+    height:330px;
+    right:0;
+    top:20px;
+  }
+
+  .baa-rp-frame-inner{
+    inset:13px;
+    padding:17px;
+  }
+
+  .baa-rp-frame-heading{
+    font-size:21px;
+    margin-bottom:15px;
+  }
+
+  .baa-rp-check{
+    padding:9px 0;
+  }
+
+  .baa-rp-check span{
+    font-size:11px;
+  }
+
+  .baa-rp-badge{
+    left:0;
+    top:18px;
+    width:125px;
+    padding:13px;
+  }
+
+  .baa-rp-badge-two{
+    right:0;
+    bottom:0;
+    width:150px;
+    padding:14px;
+  }
+
+  .baa-rp-quick-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .baa-rp-quick-item{
+    border-bottom:1px solid rgba(255,255,255,.14);
+  }
+
+  .baa-rp-challenge-cards,
+  .baa-rp-services-grid,
+  .baa-rp-form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .baa-rp-full{
+    grid-column:auto;
+  }
+
+  .baa-rp-process-grid{
+    grid-template-columns:1fr;
+  }
+
+  .baa-rp-testimonial-card{
+    flex:0 0 100%;
+    margin-right:0;
+  }
+
+  .baa-rp-slider-arrow{
+    width:40px;
+    height:40px;
+  }
+
+  .baa-rp-prev{
+    left:5px;
+  }
+
+  .baa-rp-next{
+    right:5px;
+  }
+
+  .baa-rp-form-box{
+    padding:25px;
+  }
+
+  .baa-rp-intro,
+  .baa-rp-challenge,
+  .baa-rp-services,
+  .baa-rp-strategy,
+  .baa-rp-process,
+  .baa-rp-testimonials,
+  .baa-rp-faq,
+  .baa-rp-contact{
+    padding:75px 0;
+  }
+
+  .baa-rp-bottom-box{
+    padding:50px 20px;
+  }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<div class="baa-rp-hero">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-hero-grid">
+
+      <div class="baa-rp-reveal">
+
+        <div class="baa-rp-kicker">
+          <i></i>
+          Specialized [NICHE] Advertising
+        </div>
+
+        <h1>
+          Grow Your
+          <span>[NICHE]</span>
+          Brand With A Smarter Ad Strategy
+        </h1>
+
+        <p class="baa-rp-hero-text">
+          Specialized advertising support for brands operating in
+          restricted and regulated markets. We build structured campaigns,
+          focused targeting, compelling creative, and performance-led
+          advertising strategies.
+        </p>
+
+        <div class="baa-rp-hero-actions">
+
+          <a
+            href="#baa-contact"
+            class="baa-rp-btn baa-rp-btn-primary"
+          >
+            Start Your Campaign
+          </a>
+
+          <a
+            href="#baa-services"
+            class="baa-rp-btn baa-rp-btn-secondary"
+          >
+            View Services
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="baa-rp-hero-art baa-rp-reveal baa-rp-delay-2">
+
+        <div class="baa-rp-frame">
+
+          <div class="baa-rp-frame-inner">
+
+            <div class="baa-rp-frame-title">
+              Campaign Framework
+            </div>
+
+            <div class="baa-rp-frame-heading">
+              Built With A More Focused Approach
+            </div>
+
+
+            <div class="baa-rp-check">
+
+              <div class="baa-rp-check-mark">
+                ✓
+              </div>
+
+              <span>
+                Industry-specific campaign planning
+              </span>
+
+            </div>
+
+
+            <div class="baa-rp-check">
+
+              <div class="baa-rp-check-mark">
+                ✓
+              </div>
+
+              <span>
+                Audience and market research
+              </span>
+
+            </div>
+
+
+            <div class="baa-rp-check">
+
+              <div class="baa-rp-check-mark">
+                ✓
+              </div>
+
+              <span>
+                Creative and messaging strategy
+              </span>
+
+            </div>
+
+
+            <div class="baa-rp-check">
+
+              <div class="baa-rp-check-mark">
+                ✓
+              </div>
+
+              <span>
+                Campaign optimization
+              </span>
+
+            </div>
+
+
+            <div class="baa-rp-check">
+
+              <div class="baa-rp-check-mark">
+                ✓
+              </div>
+
+              <span>
+                Performance tracking and reporting
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="baa-rp-badge">
+
+          <small>
+            Approach
+          </small>
+
+          <strong>
+            Focused
+          </strong>
+
+        </div>
+
+
+        <div class="baa-rp-badge-two">
+
+          <small>
+            Campaign
+          </small>
+
+          <strong>
+            Performance Led
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     QUICK BAR
+========================================================= -->
+
+<div class="baa-rp-quick">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-quick-grid">
+
+      <div class="baa-rp-quick-item">
+        <strong>01</strong>
+        <span>Industry Strategy</span>
+      </div>
+
+      <div class="baa-rp-quick-item">
+        <strong>02</strong>
+        <span>Audience Research</span>
+      </div>
+
+      <div class="baa-rp-quick-item">
+        <strong>03</strong>
+        <span>Campaign Management</span>
+      </div>
+
+      <div class="baa-rp-quick-item">
+        <strong>04</strong>
+        <span>Performance Optimization</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="baa-rp-intro">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-intro-grid">
+
+      <div class="baa-rp-reveal">
+
+        <div class="baa-rp-section-label">
+          [NICHE] Advertising
+        </div>
+
+        <h2>
+          Restricted Markets Need A More Focused Strategy
+        </h2>
+
+      </div>
+
+
+      <div class="baa-rp-intro-copy baa-rp-reveal baa-rp-delay-1">
+
+        <p>
+          Advertising in specialized industries requires more attention
+          to audience selection, positioning, creative direction,
+          campaign structure, and platform requirements.
+        </p>
+
+        <p>
+          Our team creates advertising strategies specifically around
+          your market, helping you build campaigns that are organized,
+          measurable, and aligned with your business objectives.
+        </p>
+
+        <div class="baa-rp-note">
+          We focus on responsible campaign planning, clear messaging,
+          appropriate targeting, and performance optimization.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHALLENGES
+========================================================= -->
+
+<section class="baa-rp-challenge">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-challenge-grid">
+
+      <div class="baa-rp-reveal">
+
+        <div
+          class="baa-rp-section-label"
+          style="color:#FFD124;"
+        >
+          Why Specialized Support?
+        </div>
+
+        <h2>
+          Your Industry Requires More Than A Standard Campaign
+        </h2>
+
+        <p class="baa-rp-challenge-intro">
+          Standard advertising strategies do not always translate well
+          to restricted or highly specialized markets. A stronger
+          approach starts with the details.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-challenge-cards">
+
+
+        <div class="baa-rp-challenge-card baa-rp-reveal">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Complex Positioning
+          </h3>
+
+          <p>
+            Build clear messaging that communicates your offer without
+            creating unnecessary confusion.
+          </p>
+
+        </div>
+
+
+        <div class="baa-rp-challenge-card baa-rp-reveal baa-rp-delay-1">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Audience Precision
+          </h3>
+
+          <p>
+            Focus campaigns on relevant customer segments and
+            meaningful advertising opportunities.
+          </p>
+
+        </div>
+
+
+        <div class="baa-rp-challenge-card baa-rp-reveal baa-rp-delay-2">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Creative Direction
+          </h3>
+
+          <p>
+            Develop campaign concepts and messaging that fit the
+            brand, audience, and advertising context.
+          </p>
+
+        </div>
+
+
+        <div class="baa-rp-challenge-card baa-rp-reveal baa-rp-delay-3">
+
+          <span>
+            04
+          </span>
+
+          <h3>
+            Continuous Optimization
+          </h3>
+
+          <p>
+            Review performance data and identify practical opportunities
+            for improvement.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+  class="baa-rp-services"
+  id="baa-services"
+>
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-heading baa-rp-reveal">
+
+      <div class="baa-rp-section-label">
+        Our Services
+      </div>
+
+      <h2>
+        End-to-End [NICHE] Advertising Support
+      </h2>
+
+      <p>
+        We support the most important stages of your advertising campaign,
+        from strategy and research through ongoing optimization.
+      </p>
+
+    </div>
+
+
+    <div class="baa-rp-services-grid">
+
+
+      <div class="baa-rp-service-card baa-rp-reveal">
+
+        <div class="baa-rp-service-number">
+          SERVICE / 01
+        </div>
+
+        <h3>
+          Campaign Strategy
+        </h3>
+
+        <p>
+          Build a practical advertising roadmap based on your goals,
+          products, market, and customer journey.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-service-card baa-rp-reveal baa-rp-delay-1">
+
+        <div class="baa-rp-service-number">
+          SERVICE / 02
+        </div>
+
+        <h3>
+          Audience Research
+        </h3>
+
+        <p>
+          Research customer segments and create a focused approach
+          to reaching relevant audiences.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-service-card baa-rp-reveal baa-rp-delay-2">
+
+        <div class="baa-rp-service-number">
+          SERVICE / 03
+        </div>
+
+        <h3>
+          Creative Strategy
+        </h3>
+
+        <p>
+          Plan campaign messaging, creative direction, hooks,
+          concepts, and brand positioning.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-service-card baa-rp-reveal">
+
+        <div class="baa-rp-service-number">
+          SERVICE / 04
+        </div>
+
+        <h3>
+          Campaign Management
+        </h3>
+
+        <p>
+          Manage campaign structure, budgets, audiences, tracking,
+          placements, and day-to-day activity.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-service-card baa-rp-reveal baa-rp-delay-1">
+
+        <div class="baa-rp-service-number">
+          SERVICE / 05
+        </div>
+
+        <h3>
+          Performance Optimization
+        </h3>
+
+        <p>
+          Analyze data, test opportunities, and improve campaigns
+          through continuous optimization.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-service-card baa-rp-reveal baa-rp-delay-2">
+
+        <div class="baa-rp-service-number">
+          SERVICE / 06
+        </div>
+
+        <h3>
+          Reporting & Insights
+        </h3>
+
+        <p>
+          Receive clear reporting and actionable insights to understand
+          campaign performance.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STRATEGY SECTION
+========================================================= -->
+
+<section class="baa-rp-strategy">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-strategy-grid">
+
+      <div class="baa-rp-reveal">
+
+        <div class="baa-rp-section-label">
+          Our Approach
+        </div>
+
+        <h2>
+          Build The Campaign Around The Business
+        </h2>
+
+        <p class="baa-rp-strategy-copy">
+          Instead of relying on a one-size-fits-all setup, we build
+          the campaign around your market, audience, offer, goals,
+          and performance data.
+        </p>
+
+
+        <div class="baa-rp-strategy-list">
+
+          <div class="baa-rp-strategy-item">
+
+            <div class="baa-rp-strategy-check">
+              ✓
+            </div>
+
+            <span>
+              Industry and competitor research
+            </span>
+
+          </div>
+
+
+          <div class="baa-rp-strategy-item">
+
+            <div class="baa-rp-strategy-check">
+              ✓
+            </div>
+
+            <span>
+              Audience and customer segmentation
+            </span>
+
+          </div>
+
+
+          <div class="baa-rp-strategy-item">
+
+            <div class="baa-rp-strategy-check">
+              ✓
+            </div>
+
+            <span>
+              Campaign and creative planning
+            </span>
+
+          </div>
+
+
+          <div class="baa-rp-strategy-item">
+
+            <div class="baa-rp-strategy-check">
+              ✓
+            </div>
+
+            <span>
+              Ongoing performance analysis
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="baa-rp-dashboard baa-rp-reveal baa-rp-delay-2">
+
+        <div class="baa-rp-dashboard-top">
+
+          <strong>
+            Campaign Framework
+          </strong>
+
+          <span>
+            Live Monitoring
+          </span>
+
+        </div>
+
+
+        <div class="baa-rp-dashboard-item">
+
+          <div class="baa-rp-dashboard-meta">
+
+            <span>
+              Market Research
+            </span>
+
+            <span>
+              Complete
+            </span>
+
+          </div>
+
+          <div class="baa-rp-progress">
+            <span data-width="96%"></span>
+          </div>
+
+        </div>
+
+
+        <div class="baa-rp-dashboard-item">
+
+          <div class="baa-rp-dashboard-meta">
+
+            <span>
+              Audience Strategy
+            </span>
+
+            <span>
+              Refined
+            </span>
+
+          </div>
+
+          <div class="baa-rp-progress">
+            <span data-width="88%"></span>
+          </div>
+
+        </div>
+
+
+        <div class="baa-rp-dashboard-item">
+
+          <div class="baa-rp-dashboard-meta">
+
+            <span>
+              Creative Testing
+            </span>
+
+            <span>
+              Active
+            </span>
+
+          </div>
+
+          <div class="baa-rp-progress">
+            <span data-width="77%"></span>
+          </div>
+
+        </div>
+
+
+        <div class="baa-rp-dashboard-item">
+
+          <div class="baa-rp-dashboard-meta">
+
+            <span>
+              Performance Review
+            </span>
+
+            <span>
+              Ongoing
+            </span>
+
+          </div>
+
+          <div class="baa-rp-progress">
+            <span data-width="91%"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="baa-rp-process">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-heading baa-rp-reveal">
+
+      <div class="baa-rp-section-label">
+        Our Process
+      </div>
+
+      <h2>
+        From Research To Campaign Growth
+      </h2>
+
+      <p>
+        A structured process keeps your advertising focused,
+        measurable, and easier to improve.
+      </p>
+
+    </div>
+
+
+    <div class="baa-rp-process-grid">
+
+
+      <div class="baa-rp-process-step baa-rp-reveal">
+
+        <div class="baa-rp-process-number">
+          01
+        </div>
+
+        <h3>
+          Research
+        </h3>
+
+        <p>
+          Understand your market, customers, competition,
+          products, and goals.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-process-step baa-rp-reveal baa-rp-delay-1">
+
+        <div class="baa-rp-process-number">
+          02
+        </div>
+
+        <h3>
+          Strategy
+        </h3>
+
+        <p>
+          Build the campaign structure, targeting, messaging,
+          and creative plan.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-process-step baa-rp-reveal baa-rp-delay-2">
+
+        <div class="baa-rp-process-number">
+          03
+        </div>
+
+        <h3>
+          Launch
+        </h3>
+
+        <p>
+          Implement the campaign with proper tracking and
+          measurable objectives.
+        </p>
+
+      </div>
+
+
+      <div class="baa-rp-process-step baa-rp-reveal baa-rp-delay-3">
+
+        <div class="baa-rp-process-number">
+          04
+        </div>
+
+        <h3>
+          Optimize
+        </h3>
+
+        <p>
+          Review performance, test new opportunities, and
+          continuously improve.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+
+<section class="baa-rp-testimonials">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-testimonial-heading baa-rp-reveal">
+
+      <div class="baa-rp-section-label">
+        Client Testimonials
+      </div>
+
+      <h2>
+        Trusted By Businesses Looking For Better Campaigns
+      </h2>
+
+      <p>
+        The testimonials below are placeholders. Replace them with
+        verified client reviews before publishing.
+      </p>
+
+    </div>
+
+
+    <div class="baa-rp-slider baa-rp-reveal">
+
+      <button
+        type="button"
+        class="baa-rp-slider-arrow baa-rp-prev"
+        aria-label="Previous testimonial"
+      >
+        ←
+      </button>
+
+
+      <div class="baa-rp-slider-window">
+
+        <div class="baa-rp-slider-track">
+
+
+          <!-- REVIEW 1 -->
+
+          <article class="baa-rp-testimonial-card">
+
+            <div class="baa-rp-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “The team gave us a much more structured advertising
+              strategy and helped us understand where our campaigns
+              needed improvement.”
+            </p>
+
+            <div class="baa-rp-client">
+
+              <div class="baa-rp-avatar">
+                JD
+              </div>
+
+              <div>
+                <strong>
+                  James Davis
+                </strong>
+
+                <span>
+                  E-commerce Brand
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- REVIEW 2 -->
+
+          <article class="baa-rp-testimonial-card">
+
+            <div class="baa-rp-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Their approach was much more detailed than a typical
+              advertising service. They understood our market and
+              built a strategy around our goals.”
+            </p>
+
+            <div class="baa-rp-client">
+
+              <div class="baa-rp-avatar">
+                SM
+              </div>
+
+              <div>
+                <strong>
+                  Sarah Mitchell
+                </strong>
+
+                <span>
+                  Digital Brand
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- REVIEW 3 -->
+
+          <article class="baa-rp-testimonial-card">
+
+            <div class="baa-rp-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Communication was excellent and the campaign management
+              was organized. We always knew what was being tested and
+              why.”
+            </p>
+
+            <div class="baa-rp-client">
+
+              <div class="baa-rp-avatar">
+                MK
+              </div>
+
+              <div>
+                <strong>
+                  Michael King
+                </strong>
+
+                <span>
+                  Online Business
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- REVIEW 4 -->
+
+          <article class="baa-rp-testimonial-card">
+
+            <div class="baa-rp-stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “The biggest improvement was the overall campaign
+              structure. We had a clearer strategy and better visibility
+              into performance.”
+            </p>
+
+            <div class="baa-rp-client">
+
+              <div class="baa-rp-avatar">
+                AL
+              </div>
+
+              <div>
+                <strong>
+                  Alex Lewis
+                </strong>
+
+                <span>
+                  Growth Client
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="baa-rp-slider-arrow baa-rp-next"
+        aria-label="Next testimonial"
+      >
+        →
+      </button>
+
+    </div>
+
+
+    <div class="baa-rp-dots">
+
+      <button
+        type="button"
+        class="baa-rp-dot active"
+        aria-label="Testimonial 1"
+      ></button>
+
+      <button
+        type="button"
+        class="baa-rp-dot"
+        aria-label="Testimonial 2"
+      ></button>
+
+      <button
+        type="button"
+        class="baa-rp-dot"
+        aria-label="Testimonial 3"
+      ></button>
+
+      <button
+        type="button"
+        class="baa-rp-dot"
+        aria-label="Testimonial 4"
+      ></button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="baa-rp-faq">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-faq-heading baa-rp-reveal">
+
+      <div class="baa-rp-section-label">
+        FAQ
+      </div>
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+      <p>
+        Common questions about our [NICHE] advertising services.
+      </p>
+
+    </div>
+
+
+    <div class="baa-rp-faq-list">
+
+
+      <details class="baa-rp-faq-item baa-rp-reveal">
+
+        <summary>
+          What does your [NICHE] advertising service include?
+        </summary>
+
+        <div class="baa-rp-faq-answer">
+          Our service can include campaign strategy, audience research,
+          creative planning, campaign management, tracking, optimization,
+          and performance reporting.
+        </div>
+
+      </details>
+
+
+      <details class="baa-rp-faq-item baa-rp-reveal">
+
+        <summary>
+          Can you manage an existing advertising campaign?
+        </summary>
+
+        <div class="baa-rp-faq-answer">
+          Yes. We can review your current campaign structure, identify
+          improvement opportunities, and manage ongoing advertising activity.
+        </div>
+
+      </details>
+
+
+      <details class="baa-rp-faq-item baa-rp-reveal">
+
+        <summary>
+          Do you customize campaigns for restricted industries?
+        </summary>
+
+        <div class="baa-rp-faq-answer">
+          Yes. Campaign strategy, audience research, messaging, creative
+          direction, and reporting can be adapted to the specific needs
+          of your market.
+        </div>
+
+      </details>
+
+
+      <details class="baa-rp-faq-item baa-rp-reveal">
+
+        <summary>
+          How do you approach advertising requirements?
+        </summary>
+
+        <div class="baa-rp-faq-answer">
+          We use responsible campaign planning, appropriate messaging,
+          suitable targeting, and ongoing performance analysis. Advertising
+          requirements can vary by platform and market.
+        </div>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+  class="baa-rp-contact"
+  id="baa-contact"
+>
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-contact-grid">
+
+
+      <div class="baa-rp-contact-copy baa-rp-reveal">
+
+        <div class="baa-rp-section-label">
+          Talk To Boost
+        </div>
+
+        <h2>
+          Let's Build A Stronger [NICHE] Campaign
+        </h2>
+
+        <p>
+          Tell us about your business, current advertising activity,
+          target audience, and growth goals. Our team can review your
+          requirements and discuss a suitable strategy.
+        </p>
+
+
+        <div class="baa-rp-contact-points">
+
+
+          <div class="baa-rp-contact-point">
+
+            <div class="baa-rp-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Specialized campaign strategy
+            </span>
+
+          </div>
+
+
+          <div class="baa-rp-contact-point">
+
+            <div class="baa-rp-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Audience and market research
+            </span>
+
+          </div>
+
+
+          <div class="baa-rp-contact-point">
+
+            <div class="baa-rp-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Creative and campaign planning
+            </span>
+
+          </div>
+
+
+          <div class="baa-rp-contact-point">
+
+            <div class="baa-rp-contact-point-icon">
+              ✓
+            </div>
+
+            <span>
+              Ongoing performance optimization
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <div class="baa-rp-form-box baa-rp-reveal baa-rp-delay-2">
+
+        <h3>
+          Request A Consultation
+        </h3>
+
+        <p>
+          Share a few details and our team will review your requirements.
+        </p>
+
+
+        <form
+          id="baaRestrictedForm"
+          action="#"
+          method="post"
+        >
+
+          <div class="baa-rp-form-grid">
+
+
+            <div class="baa-rp-field">
+
+              <label for="baa-rp-name">
+                Full Name
+              </label>
+
+              <input
+                id="baa-rp-name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              >
+
+            </div>
+
+
+            <div class="baa-rp-field">
+
+              <label for="baa-rp-email">
+                Email Address
+              </label>
+
+              <input
+                id="baa-rp-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="baa-rp-field">
+
+              <label for="baa-rp-phone">
+                Phone Number
+              </label>
+
+              <input
+                id="baa-rp-phone"
+                name="phone"
+                type="tel"
+                placeholder="+1 000 000 0000"
+              >
+
+            </div>
+
+
+            <div class="baa-rp-field">
+
+              <label for="baa-rp-service">
+                Service
+              </label>
+
+              <select
+                id="baa-rp-service"
+                name="service"
+                required
+              >
+
+                <option value="">
+                  Select service
+                </option>
+
+                <option>
+                  [NICHE] Advertising Strategy
+                </option>
+
+                <option>
+                  Campaign Management
+                </option>
+
+                <option>
+                  Audience Research
+                </option>
+
+                <option>
+                  Creative Strategy
+                </option>
+
+                <option>
+                  Performance Optimization
+                </option>
+
+                <option>
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="baa-rp-field baa-rp-full">
+
+              <label for="baa-rp-budget">
+                Estimated Monthly Ad Budget
+              </label>
+
+              <select
+                id="baa-rp-budget"
+                name="budget"
+              >
+
+                <option value="">
+                  Select budget
+                </option>
+
+                <option>
+                  Under $1,000
+                </option>
+
+                <option>
+                  $1,000 - $5,000
+                </option>
+
+                <option>
+                  $5,000 - $10,000
+                </option>
+
+                <option>
+                  $10,000 - $25,000
+                </option>
+
+                <option>
+                  $25,000+
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="baa-rp-field baa-rp-full">
+
+              <label for="baa-rp-message">
+                Tell Us About Your Business
+              </label>
+
+              <textarea
+                id="baa-rp-message"
+                name="message"
+                placeholder="Tell us about your business, audience, current campaigns, and goals..."
+                required
+              ></textarea>
+
+            </div>
+
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="baa-rp-submit"
+          >
+            Request A Consultation
+          </button>
+
+
+          <div class="baa-rp-form-note">
+            Your information is used only to respond to your inquiry.
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="baa-rp-bottom">
+
+  <div class="baa-rp-container">
+
+    <div class="baa-rp-bottom-box baa-rp-reveal">
+
+      <h2>
+        Ready To Take Your [NICHE] Advertising Further?
+      </h2>
+
+      <p>
+        Build a focused strategy around your audience, market,
+        and business goals.
+      </p>
+
+      <a
+        href="#baa-contact"
+        class="baa-rp-btn baa-rp-btn-primary"
+      >
+        Talk To Our Team
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+  const revealElements =
+    document.querySelectorAll(".baa-rp-reveal");
+
+  if("IntersectionObserver" in window){
+
+    const observer =
+      new IntersectionObserver(
+        function(entries){
+
+          entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold:.12
+        }
+      );
+
+    revealElements.forEach(function(el){
+      observer.observe(el);
+    });
+
+  }else{
+
+    revealElements.forEach(function(el){
+      el.classList.add("visible");
+    });
+
+  }
+
+
+  /* =======================================================
+     PROGRESS BAR ANIMATION
+  ======================================================= */
+
+  const progressBars =
+    document.querySelectorAll(
+      ".baa-rp-progress span"
+    );
+
+  if("IntersectionObserver" in window){
+
+    const progressObserver =
+      new IntersectionObserver(
+        function(entries){
+
+          entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+              const width =
+                entry.target.getAttribute(
+                  "data-width"
+                );
+
+              entry.target.style.width =
+                width;
+
+              progressObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold:.35
+        }
+      );
+
+    progressBars.forEach(function(bar){
+      progressObserver.observe(bar);
+    });
+
+  }
+
+
+  /* =======================================================
+     TESTIMONIAL SLIDER
+  ======================================================= */
+
+  const track =
+    document.querySelector(
+      ".baa-rp-slider-track"
+    );
+
+  const cards =
+    document.querySelectorAll(
+      ".baa-rp-testimonial-card"
+    );
+
+  const prev =
+    document.querySelector(
+      ".baa-rp-prev"
+    );
+
+  const next =
+    document.querySelector(
+      ".baa-rp-next"
+    );
+
+  const dots =
+    document.querySelectorAll(
+      ".baa-rp-dot"
+    );
+
+  const slider =
+    document.querySelector(
+      ".baa-rp-slider"
+    );
+
+  if(!track || !cards.length){
+    return;
+  }
+
+
+  let index = 0;
+  let autoplay;
+
+
+  function visibleCards(){
+
+    if(window.innerWidth <= 650){
+      return 1;
+    }
+
+    if(window.innerWidth <= 1000){
+      return 2;
+    }
+
+    return 3;
+
+  }
+
+
+  function getMaxIndex(){
+
+    return Math.max(
+      0,
+      cards.length - visibleCards()
+    );
+
+  }
+
+
+  function updateSlider(){
+
+    const width =
+      cards[0].getBoundingClientRect().width;
+
+    const gap =
+      window.innerWidth > 650
+      ? 21
+      : 0;
+
+    const distance =
+      (width + gap) * index;
+
+    track.style.transform =
+      "translateX(-" +
+      distance +
+      "px)";
+
+
+    dots.forEach(function(dot,i){
+
+      dot.classList.toggle(
+        "active",
+        i === index
+      );
+
+    });
+
+  }
+
+
+  function nextSlide(){
+
+    const maximum =
+      getMaxIndex();
+
+    if(index >= maximum){
+
+      index = 0;
+
+    }else{
+
+      index++;
+
+    }
+
+    updateSlider();
+
+  }
+
+
+  function previousSlide(){
+
+    const maximum =
+      getMaxIndex();
+
+    if(index <= 0){
+
+      index = maximum;
+
+    }else{
+
+      index--;
+
+    }
+
+    updateSlider();
+
+  }
+
+
+  function startAutoplay(){
+
+    clearInterval(autoplay);
+
+    autoplay =
+      setInterval(
+        nextSlide,
+        4500
+      );
+
+  }
+
+
+  function stopAutoplay(){
+
+    clearInterval(autoplay);
+
+  }
+
+
+  next.addEventListener(
+    "click",
+    function(){
+
+      nextSlide();
+      startAutoplay();
+
+    }
+  );
+
+
+  prev.addEventListener(
+    "click",
+    function(){
+
+      previousSlide();
+      startAutoplay();
+
+    }
+  );
+
+
+  dots.forEach(function(dot,i){
+
+    dot.addEventListener(
+      "click",
+      function(){
+
+        index =
+          Math.min(
+            i,
+            getMaxIndex()
+          );
+
+        updateSlider();
+        startAutoplay();
+
+      }
+    );
+
+  });
+
+
+  slider.addEventListener(
+    "mouseenter",
+    stopAutoplay
+  );
+
+
+  slider.addEventListener(
+    "mouseleave",
+    startAutoplay
+  );
+
+
+  window.addEventListener(
+    "resize",
+    function(){
+
+      index =
+        Math.min(
+          index,
+          getMaxIndex()
+        );
+
+      updateSlider();
+
+    }
+  );
+
+
+  updateSlider();
+  startAutoplay();
+
+
+  /* =======================================================
+     DEMO FORM INTERACTION
+  ======================================================= */
+
+  const form =
+    document.getElementById(
+      "baaRestrictedForm"
+    );
+
+  if(form){
+
+    form.addEventListener(
+      "submit",
+      function(e){
+
+        e.preventDefault();
+
+        const button =
+          form.querySelector(
+            ".baa-rp-submit"
+          );
+
+        const original =
+          button.textContent;
+
+        button.textContent =
+          "Request Received";
+
+        button.style.background =
+          "#006778";
+
+        setTimeout(function(){
+
+          button.textContent =
+            original;
+
+          button.style.background =
+            "";
+
+        },3000);
+
+      }
+    );
+
+  }
+
+});
+
+</script>
+
+</section>
+
+
+<nav class="demo-gallery-nav" aria-label="Template gallery navigation">
+<style>
+.demo-gallery-nav{background:#0b0d12;color:#fff;padding:34px 20px 28px;font-family:Arial,Helvetica,sans-serif;border-top:3px solid #2a2f3a}
+.demo-gallery-nav *{box-sizing:border-box}
+.demo-gallery-nav .dgn-inner{max-width:1180px;margin:0 auto}
+.demo-gallery-nav h4{margin:0 0 18px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#8b95a8;font-weight:700}
+.demo-gallery-nav .dgn-groups{display:flex;flex-wrap:wrap;gap:30px}
+.demo-gallery-nav .dgn-group{min-width:150px}
+.demo-gallery-nav .dgn-group strong{display:block;font-size:12px;color:#ffb14e;margin-bottom:9px;text-transform:uppercase;letter-spacing:.5px}
+.demo-gallery-nav .dgn-group a{display:block;color:#d7dbea;font-size:13px;text-decoration:none;margin:7px 0;opacity:.82}
+.demo-gallery-nav .dgn-group a:hover{opacity:1;text-decoration:underline}
+.demo-gallery-nav .dgn-group a.current{color:#fff;font-weight:700;opacity:1}
+@media(max-width:600px){.demo-gallery-nav .dgn-groups{gap:22px}}
+</style>
+<div class="dgn-inner">
+<h4>Template Gallery</h4>
+<div class="dgn-groups">
+<div class="dgn-group">
+<strong>Ads Approved</strong>
+<a href="ads-approved-home.html">Home</a>
+<a href="ads-approved-services.html">Services</a>
+<a href="ads-approved-about.html">About Us</a>
+<a href="ads-approved-contact.html">Contact Us</a>
+</div>
+<div class="dgn-group">
+<strong>Black Hat Ads</strong>
+<a href="blackhat-ads.html">Service Page</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Ad Agency</strong>
+<a href="boost-ad-agency-services.html">Service Pages</a>
+<a href="boost-ad-agency-restricted-niche.html" class="current">Restricted Niche</a>
+</div>
+<div class="dgn-group">
+<strong>Boost Agency Ltd</strong>
+<a href="boost-agency-ltd.html">Landing Page</a>
+</div>
+<div class="dgn-group">
+<strong>Cloaker Agency</strong>
+<a href="cloaker-agency.html">Home</a>
+</div>
+<div class="dgn-group">
+<strong>CryptoAds</strong>
+<a href="cryptoads.html">Home</a>
+</div>
+</div>
+</div>
+</nav>
+
